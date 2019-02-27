@@ -1,0 +1,59 @@
+language: java
+jdk:
+  - oraclejdk11
+install: true
+before_install:
+  - npm install -g @angular/cli
+stages:
+  - name: test
+  - name: build
+  - name: docker_build
+    if: branch = develop
+  - name: deploy
+    if: branch = master
+jobs:
+  include:
+      - stage: test
+        script:
+         - cd slackoBackend
+         - chmod +x mvnw
+         - mvn test
+      - stage: build
+        script:
+         - cd slackoFrontend/slack
+         - npm i
+         - ng build
+         - cd -
+         - cd slackoBackend
+         - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+      - stage: docker_build
+        script:
+          - cd slackoBackend
+          - mvn package
+          - docker build -t $DOCKER_USERNAME/slack:$BE_TAG .
+          - cd -
+          - cd slackoFrontend/slack
+          - npm install
+          - npm install @types/node --save-dev
+          - npm run build
+          - docker build -t $DOCKER_USERNAME/slack:$FE_TAG .
+          - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
+          - docker push $DOCKER_USERNAME/slack:$BE_TAG
+          - docker push $DOCKER_USERNAME/slack:$FE_TAG
+      - stage: deploy
+        script:
+          - curl https://cli-assets.heroku.com/install-standalone.sh | sh
+          - docker login --username=_ --password=$HEROKU_TOKEN registry.heroku.com
+          - cd slackoBackend
+          - mvn package -DskipTests
+          - docker build -t registry.heroku.com/study-slacko-backend/web -f Dockerfile.prod .
+          - docker push registry.heroku.com/study-slacko-backend/web
+          - /usr/local/bin/heroku container:release web -a study-slacko-backend
+          - cd -
+          - cd slackoFrontend/slack
+          - npm install
+          - npm install @types/node --save-dev
+          - ng build --prod
+          - docker build -t registry.heroku.com/study-slacko-frontend/web -f Dockerfile.prod .
+          - docker push registry.heroku.com/study-slacko-frontend/web
+          - /usr/local/bin/heroku container:release web -a study-slacko-frontend
