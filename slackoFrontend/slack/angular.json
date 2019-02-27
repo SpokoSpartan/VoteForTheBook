@@ -23,9 +23,12 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "../slack/node_modules/bootstrap/dist/css/bootstrap.css"
             ],
-            "scripts": [],
+            "scripts": [
+              "../slack/node_modules/bootstrap/dist/js/bootstrap.js"
+            ],
             "es5BrowserSupport": true
           },
           "configurations": {
