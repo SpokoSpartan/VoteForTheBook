@@ -6,6 +6,7 @@ import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.monitorjbl.json.JsonView;
 import com.monitorjbl.json.JsonViewSerializer;
 import com.monitorjbl.json.Match;
+import com.slack.DTOs.Email;
 import com.slack.DTOs.UserDTO;
 import com.slack.entities.User;
 import com.slack.exceptions.BadCredentialsException;
@@ -28,6 +29,7 @@ public class UserService implements UserDetailsService {
 
     private final UserRepository userRepository;
     private final BCryptPasswordEncoder bCryptPasswordEncoder;
+    private final EmailService emailService;
 
     private final SimpleModule module = new SimpleModule()
             .addSerializer(JsonView.class, new JsonViewSerializer());
@@ -62,6 +64,9 @@ public class UserService implements UserDetailsService {
     public Long createUser(UserDTO userDTO) {
         User user = new User(userDTO.getEmail(), userDTO.getNickName(),
                 bCryptPasswordEncoder.encode(userDTO.getPassword()));
+        emailService.sendSimpleMessage(new Email("Registration",
+                "Thank you for joining to slack. Please confirm your email! Link XD"),
+                Arrays.asList(userDTO.getEmail()));
         return userRepository.save(user).getId();
     }
 }
