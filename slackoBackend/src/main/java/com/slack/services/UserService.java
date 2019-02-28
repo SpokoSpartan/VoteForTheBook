@@ -13,6 +13,7 @@ import com.slack.exceptions.BadCredentialsException;
 import com.slack.exceptions.SomethingBadHappenException;
 import com.slack.repositories.UserRepository;
 import lombok.RequiredArgsConstructor;
+import org.apache.commons.codec.digest.DigestUtils;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -49,7 +50,7 @@ public class UserService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         User user = userRepository.findUserByNickName(username);
-        if(user == null) {
+        if(user == null || user.getRegistrationToken() != null) {
             throw new BadCredentialsException();
         }
         return prepareUserForAuthentication(user);
@@ -62,11 +63,24 @@ public class UserService implements UserDetailsService {
     }
 
     public Long createUser(UserDTO userDTO) {
+        String registrationToken = DigestUtils.sha256Hex(userDTO.getNickName());
+        if (registrationToken.length() > 50) {
+            registrationToken = registrationToken.substring(0,50);
+        }
         User user = new User(userDTO.getEmail(), userDTO.getNickName(),
-                bCryptPasswordEncoder.encode(userDTO.getPassword()));
-        emailService.sendSimpleMessage(new Email("Registration",
-                "Thank you for joining to slack. Please confirm your email! Link XD"),
+                bCryptPasswordEncoder.encode(userDTO.getPassword()), registrationToken);
+        emailService.sendSimpleMessage(new Email("Registration","Thank you for joining to slack." +
+                        " Please confirm your email! http://localhost:8080/api/v1/user/confirm/" + registrationToken),
                 Arrays.asList(userDTO.getEmail()));
         return userRepository.save(user).getId();
+    }
+
+    public void confirmUserEmail(String registrationToken) {
+        User user = userRepository.findUserByRegistrationToken(registrationToken);
+        if(user == null) {
+            throw new BadCredentialsException();
+        }
+        user.setRegistrationToken("AUTHORIZED");
+        userRepository.save(user);
     }
 }

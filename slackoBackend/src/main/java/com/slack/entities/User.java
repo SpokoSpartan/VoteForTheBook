@@ -27,4 +27,8 @@ public class User implements Serializable {
     @JsonIgnore
     @NonNull
     private String password;
+
+    @JsonIgnore
+    @NonNull
+    private String registrationToken;
 }

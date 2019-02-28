@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 
 @ResponseStatus(HttpStatus.BAD_REQUEST)
 public class EntityNotFoundException extends RuntimeException {
-    public EntityNotFoundException(String entityname) {
-        super("Sorry, but we can't find this " + entityname);
+    public EntityNotFoundException(String entityName) {
+        super("Sorry, but we can't find this " + entityName);
     }
 }
