@@ -40,7 +40,4 @@ public class Group implements Serializable {
             joinColumns = @JoinColumn(name = "group_id"),
             inverseJoinColumns = @JoinColumn(name = "user_id"))
     private List<User> admins;
-
-    @NonNull
-    private Boolean isOfficialCreated;
 }
