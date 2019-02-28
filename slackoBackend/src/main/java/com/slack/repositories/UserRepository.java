@@ -13,4 +13,6 @@ public interface UserRepository extends JpaRepository<User, Long> {
     @Query(value = "SELECT * FROM \"user\" u WHERE UPPER(u.nick_name) LIKE ?1 || '%'",
             nativeQuery = true)
     List<User> findAllByFirstPartOfNick(String name);
+
+    User findUserByNickName(String nickName);
 }

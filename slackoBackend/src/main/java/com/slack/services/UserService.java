@@ -7,16 +7,22 @@ import com.monitorjbl.json.JsonView;
 import com.monitorjbl.json.JsonViewSerializer;
 import com.monitorjbl.json.Match;
 import com.slack.entities.User;
+import com.slack.exceptions.BadCredentialsException;
 import com.slack.exceptions.SomethingBadHappenException;
 import com.slack.repositories.UserRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import java.util.Arrays;
 import java.util.List;
 
 @RequiredArgsConstructor
 @Service
-public class UserService {
+public class UserService implements UserDetailsService {
 
     private final UserRepository userRepository;
 
@@ -33,5 +39,20 @@ public class UserService {
         } catch (JsonProcessingException e) {
             throw new SomethingBadHappenException();
         }
+    }
+
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        User user = userRepository.findUserByNickName(username);
+        if(user == null) {
+            throw new BadCredentialsException();
+        }
+        return prepareUserForAuthentication(user);
+    }
+
+    private org.springframework.security.core.userdetails.User prepareUserForAuthentication(User user) {
+        return new org.springframework.security.core.userdetails.User(
+            user.getNickName(), user.getPassword(),
+                Arrays.asList(new SimpleGrantedAuthority("ROLE_USER")));
     }
 }
