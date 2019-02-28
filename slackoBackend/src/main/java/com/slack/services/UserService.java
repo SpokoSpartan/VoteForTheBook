@@ -6,6 +6,7 @@ import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.monitorjbl.json.JsonView;
 import com.monitorjbl.json.JsonViewSerializer;
 import com.monitorjbl.json.Match;
+import com.slack.DTOs.UserDTO;
 import com.slack.entities.User;
 import com.slack.exceptions.BadCredentialsException;
 import com.slack.exceptions.SomethingBadHappenException;
@@ -15,6 +16,7 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
@@ -25,6 +27,7 @@ import java.util.List;
 public class UserService implements UserDetailsService {
 
     private final UserRepository userRepository;
+    private final BCryptPasswordEncoder bCryptPasswordEncoder;
 
     private final SimpleModule module = new SimpleModule()
             .addSerializer(JsonView.class, new JsonViewSerializer());
@@ -54,5 +57,11 @@ public class UserService implements UserDetailsService {
         return new org.springframework.security.core.userdetails.User(
             user.getNickName(), user.getPassword(),
                 Arrays.asList(new SimpleGrantedAuthority("ROLE_USER")));
+    }
+
+    public Long createUser(UserDTO userDTO) {
+        User user = new User(userDTO.getEmail(), userDTO.getNickName(),
+                bCryptPasswordEncoder.encode(userDTO.getPassword()));
+        return userRepository.save(user).getId();
     }
 }
