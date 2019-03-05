@@ -8,10 +8,8 @@ import javax.validation.constraints.Size;
 @Setter
 @Getter
 @AllArgsConstructor
-@NoArgsConstructor
 public class Email {
 
-    @NonNull
     @NotBlank(message = "The subject of the message is required")
     @Size(max = 200, message = "Subject can't exceed 200 characters")
     private String subject;

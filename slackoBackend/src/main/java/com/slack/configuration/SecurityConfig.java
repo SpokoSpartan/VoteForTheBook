@@ -27,7 +27,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.csrf().disable().httpBasic().authenticationEntryPoint(restAuthenticationEntryPoint)
+        http.csrf().disable().httpBasic()//.authenticationEntryPoint(restAuthenticationEntryPoint)
                 .and().cors().and()
                 .authorizeRequests()
                 .antMatchers("/error**", "/", "/login**").permitAll()
