@@ -4,7 +4,7 @@ import {CreateBookComponent} from './components/book-component/create-book/creat
 
 
 export const routes: Routes = [
-  {path: '', redirectTo: 'books-management', pathMatch: 'full'},
+  {path: '', redirectTo: 'create-book', pathMatch: 'full'},
   {path: 'books-management', component: BookComponent},
   {path: 'create-book', component: CreateBookComponent}
 ]

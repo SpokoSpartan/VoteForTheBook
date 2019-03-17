@@ -14,17 +14,16 @@ export class CreateBookComponent implements OnInit {
   constructor(private authorService: AuthorService,
               private bookCategoryService: BookCategoryService) { }
 
-  authors: Author[];
-  categories: BookCategory[];
-  areDataCurrent = false;
+  authors: Author[] = [];
+  categories: BookCategory[] = [];
 
   ngOnInit() {
-    this.initParameters().then(() => this.areDataCurrent = true);
+    this.initParameters();
   }
 
   async initParameters() {
-    this.initAuthors();
-    this.initBookCategories();
+    await this.initAuthors();
+    await this.initBookCategories();
   }
 
   async initAuthors() {

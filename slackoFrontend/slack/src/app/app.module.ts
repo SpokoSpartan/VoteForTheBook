@@ -16,13 +16,17 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {AuthorService} from './services/author-service/author.service';
 import {BookCategoryService} from './services/book-category-service/book-category.service';
 import {RestService} from './services/rest-service/rest.service';
+import { FooterComponent } from './components/footer-component/footer/footer.component';
+import { NavbarComponent } from './components/navbar-component/navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegistrationComponent,
     BookComponent,
-    CreateBookComponent
+    CreateBookComponent,
+    FooterComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
