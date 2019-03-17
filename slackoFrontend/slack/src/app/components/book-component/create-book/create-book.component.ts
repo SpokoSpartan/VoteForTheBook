@@ -3,6 +3,7 @@ import {Author} from '../../../models/Author';
 import {BookCategory} from '../../../models/BookCategory';
 import {AuthorService} from '../../../services/author-service/author.service';
 import {BookCategoryService} from '../../../services/book-category-service/book-category.service';
+import {FormBuilder, FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-create-book',
@@ -12,7 +13,8 @@ import {BookCategoryService} from '../../../services/book-category-service/book-
 export class CreateBookComponent implements OnInit {
 
   constructor(private authorService: AuthorService,
-              private bookCategoryService: BookCategoryService) { }
+              private bookCategoryService: BookCategoryService,
+              private formBuilder: FormBuilder) { }
 
   authors: Author[] = [];
   categories: BookCategory[] = [];

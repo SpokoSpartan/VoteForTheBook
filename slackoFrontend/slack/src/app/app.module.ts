@@ -16,17 +16,18 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {AuthorService} from './services/author-service/author.service';
 import {BookCategoryService} from './services/book-category-service/book-category.service';
 import {RestService} from './services/rest-service/rest.service';
-import { FooterComponent } from './components/footer-component/footer/footer.component';
 import { NavbarComponent } from './components/navbar-component/navbar/navbar.component';
+import { LoginComponent } from './components/login-component/login/login.component';
+import {UserService} from './services/user-service/user.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RegistrationComponent,
     BookComponent,
     CreateBookComponent,
-    FooterComponent,
-    NavbarComponent
+    NavbarComponent,
+    LoginComponent,
+    RegistrationComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +39,7 @@ import { NavbarComponent } from './components/navbar-component/navbar/navbar.com
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [BookService, AuthorService, BookCategoryService, RestService],
+  providers: [BookService, AuthorService, BookCategoryService, RestService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
