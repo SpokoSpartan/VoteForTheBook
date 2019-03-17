@@ -30,7 +30,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.csrf().disable().httpBasic()//.authenticationEntryPoint(restAuthenticationEntryPoint)
                 .and().cors().and()
                 .authorizeRequests()
-                .antMatchers("/error**", "/", "/login**").permitAll()
+                .antMatchers("/error**", "/", "/login**", API_VERSION + BOOK + "/**").permitAll()
                 .antMatchers(API_VERSION + GROUP + "/**").hasRole("USER")
                 .and()
                 .formLogin()

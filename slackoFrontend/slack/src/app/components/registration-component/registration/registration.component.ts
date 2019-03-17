@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {UserService} from '../../../services/user-service/user.service';
+import {BookService} from '../../../services/book-service/book.service';
 import {UserDTO} from '../../../models/DTOs/UserDTO';
 
 @Component({
@@ -11,7 +11,7 @@ export class RegistrationComponent implements OnInit {
 
   userDto: UserDTO;
 
-  constructor(private userService: UserService) {
+  constructor(private userService: BookService) {
 
     this.userDto.nickName = 'Koks2000';
     this.userDto.email = 'wojtekspoton@gmail.com';
@@ -20,10 +20,6 @@ export class RegistrationComponent implements OnInit {
 
 
   ngOnInit() {
-
-    this.userService.createUser(this.userDto);
-
-
   }
 
 }

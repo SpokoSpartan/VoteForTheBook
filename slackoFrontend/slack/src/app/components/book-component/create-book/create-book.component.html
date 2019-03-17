@@ -1,0 +1,96 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-1 order-md-1"></div>
+    <div class="col-md-10 order-md-2">
+      <div class="py-5 text-center">
+        <img width="72" height="72" class="d-block mx-auto mb-4" alt=""
+             src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg">
+        <h2>Create book</h2>
+        <p class="lead">The form below allows you to create a copy of the book.
+          From that moment, the book will be included in the voting.
+          Only you can remove it and at the same time exclude it from voting.</p>
+      </div>
+    </div>
+    <div class="col-md-1 order-md-3"></div>
+  </div>
+
+  <div class="row" *ngIf="areDataCurrent">
+    <div class="col-md-2 order-md-1 col-sm-1 order-sm-1"></div>
+    <div class="col-md-8 order-md-2 col-sm-10 order-sm-1">
+      <form>
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input type="text" class="form-control" id="title" aria-describedby="titleHelp"  placeholder="Title">
+        </div>
+        <div class="row">
+          <div class="col-md-8 order-md-1">
+            <div class="form-group">
+              <label for="isbn">Isbn</label>
+              <input type="text" class="form-control" id="isbn" aria-describedby="isbnHelp"  placeholder="ISBN">
+            </div>
+          </div>
+          <div class="col-md-4 order-md-2">
+            <label for="isbn">Get from APIs</label>
+            <button type="button" class="btn btn-primary btn-block">Get Books</button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-8 order-md-1">
+            <div class="form-group">
+              <label for="URL">Picture URL</label>
+              <input type="text" class="form-control" id="URL" aria-describedby="URLHelp"  placeholder="Title">
+            </div>
+          </div>
+          <div class="col-md-4 order-md-2">
+            <label for="isbn">Generate URL</label>
+            <button type="button" class="btn btn-success btn-block">Add image</button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-8 order-md-1">
+            <label for="isbn">Authors</label>
+            <div class="card mb-4 box-shadow">
+              <div class="card-body">
+                <div class="force-to-the-bottom">
+                  <tag-input [ngModel]="['hardocoded-item']">
+                    <tag-input-dropdown
+                      [autocompleteItems]="authors"
+                      [showDropdownIfEmpty]="true"
+                      [dynamicUpdate]="true"
+                      displayBy="authorFullName"
+                      identifyBy="id">
+                    </tag-input-dropdown>
+                  </tag-input>
+                </div>
+              </div>
+            </div>
+            <label for="isbn">Categories</label>
+            <div class="card mb-4 box-shadow">
+              <div class="card-body">
+                <div class="force-to-the-bottom">
+                  <tag-input [ngModel]="['hardocoded-item']">
+                    <tag-input-dropdown
+                      [autocompleteItems]="categories"
+                      [showDropdownIfEmpty]="true"
+                      [dynamicUpdate]="false"
+                      displayBy="bookCategoryName"
+                      identifyBy="id">
+                    </tag-input-dropdown>
+                  </tag-input>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 order-md-2"></div>
+        </div>
+
+        <div class="form-group">
+          <label for="description">Description</label>
+          <input type="text" class="form-control" id="description" aria-describedby="descriptionHelp"  placeholder="Description">
+        </div>
+
+      </form>
+    </div>
+    <div class="col-md-2 order-md-3 col-sm-1 order-sm-3"></div>
+  </div>
+</div>

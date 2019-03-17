@@ -1,6 +1,7 @@
 package com.slack.entities;
 
 import lombok.*;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -11,6 +12,8 @@ import java.util.List;
 @Data
 @RequiredArgsConstructor
 @NoArgsConstructor
+@EntityListeners(AuditingEntityListener.class)
+
 public class Group implements Serializable {
 
     @Id
