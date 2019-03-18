@@ -19,6 +19,8 @@ import {RestService} from './services/rest-service/rest.service';
 import { NavbarComponent } from './components/navbar-component/navbar/navbar.component';
 import { LoginComponent } from './components/login-component/login/login.component';
 import {UserService} from './services/user-service/user.service';
+import {LoginService} from './services/login-service/login.service';
+import { ConfirmationComponent } from './components/registration-component/confirmation/confirmation.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import {UserService} from './services/user-service/user.service';
     CreateBookComponent,
     NavbarComponent,
     LoginComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    ConfirmationComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +42,8 @@ import {UserService} from './services/user-service/user.service';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [BookService, AuthorService, BookCategoryService, RestService, UserService],
+  providers: [BookService, AuthorService, BookCategoryService,
+    RestService, UserService, LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

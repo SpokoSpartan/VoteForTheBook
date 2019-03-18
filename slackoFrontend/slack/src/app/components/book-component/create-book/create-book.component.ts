@@ -3,7 +3,7 @@ import {Author} from '../../../models/Author';
 import {BookCategory} from '../../../models/BookCategory';
 import {AuthorService} from '../../../services/author-service/author.service';
 import {BookCategoryService} from '../../../services/book-category-service/book-category.service';
-import {FormBuilder, FormGroup} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-create-book',
@@ -18,9 +18,19 @@ export class CreateBookComponent implements OnInit {
 
   authors: Author[] = [];
   categories: BookCategory[] = [];
+  createBookParams: FormGroup;
+
 
   ngOnInit() {
+    this.initFormGroup();
     this.initParameters();
+  }
+
+  initFormGroup() {
+    this.createBookParams = this.formBuilder.group({
+      title: ['', [Validators.required]],
+      isbn: ['', [Validators.required]]
+    })
   }
 
   async initParameters() {

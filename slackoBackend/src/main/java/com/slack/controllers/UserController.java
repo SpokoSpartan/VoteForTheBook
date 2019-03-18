@@ -36,9 +36,8 @@ public class UserController {
         return ResponseEntity.ok(userService.createUser(userDTO));
     }
 
-    @GetMapping(CONFIRM)
-    public void confirmEmail(@PathVariable String confirmationToken, HttpServletResponse response) throws IOException {
+    @PostMapping(CONFIRM)
+    public void confirmEmail(@PathVariable String confirmationToken) {
         userService.confirmUserEmail(confirmationToken);
-        response.sendRedirect(feUrl + "/login");
     }
 }

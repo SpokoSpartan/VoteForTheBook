@@ -14,6 +14,7 @@ import com.slack.exceptions.SomethingBadHappenException;
 import com.slack.repositories.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.codec.digest.DigestUtils;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -31,6 +32,9 @@ public class UserService implements UserDetailsService {
     private final UserRepository userRepository;
     private final BCryptPasswordEncoder bCryptPasswordEncoder;
     private final EmailService emailService;
+
+    @Value("${fe_url}")
+    private String feUrl;
 
     private final SimpleModule module = new SimpleModule()
             .addSerializer(JsonView.class, new JsonViewSerializer());
@@ -50,8 +54,10 @@ public class UserService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         User user = userRepository.findUserByNickName(username);
-        if(user == null || user.getRegistrationToken() != null) {
-            throw new BadCredentialsException();
+        if(user == null || !user.getRegistrationToken().equals("AUTHORIZED")) {
+            user = new User();
+            user.setNickName("null");
+            user.setPassword("$2a$10$null");
         }
         return prepareUserForAuthentication(user);
     }
@@ -64,13 +70,13 @@ public class UserService implements UserDetailsService {
 
     public Long createUser(UserDTO userDTO) {
         String registrationToken = DigestUtils.sha256Hex(userDTO.getNickName());
-        if (registrationToken.length() > 50) {
-            registrationToken = registrationToken.substring(0,50);
+        if (registrationToken.length() > 30) {
+            registrationToken = registrationToken.substring(0,30);
         }
         User user = new User(userDTO.getEmail(), userDTO.getNickName(),
                 bCryptPasswordEncoder.encode(userDTO.getPassword()), registrationToken);
-        emailService.sendSimpleMessage(new Email("Registration","Thank you for joining to slack." +
-                        " Please confirm your email! http://localhost:8080/api/v1/user/confirm/" + registrationToken),
+        emailService.sendSimpleMessage(new Email("Registration","Thank you for joining us." +
+                        " Please confirm your email! " + feUrl + "/confirm/" + registrationToken),
                 Arrays.asList(userDTO.getEmail()));
         return userRepository.save(user).getId();
     }
