@@ -21,7 +21,7 @@ export class ImageService {
       ).toPromise();
   }
 
-  uploadImage(item: any): Observable<any> {
+  uploadImage(item: FormData): Observable<any> {
     return this.http.post<any>(this.URL + '/upload', item, { withCredentials: true })
       .pipe(
         catchError(this.handleError)
@@ -29,13 +29,7 @@ export class ImageService {
   }
 
   private handleError(error: HttpErrorResponse) {
-    if (error.error instanceof ErrorEvent) {
-      console.error('An error occurred:', error.error.message);
-    } else {
-      console.error(
-        `Backend returned code ${error.status}, ` +
-        `exception was: ${error.error.message}`);
-    }
+    console.log(error);
     return throwError(error);
   }
 }

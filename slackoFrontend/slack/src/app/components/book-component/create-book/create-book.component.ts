@@ -7,6 +7,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {BookDTO} from '../../../models/DTOs/BookDTO';
 import {BookService} from '../../../services/book-service/book.service';
 import {ImageService} from '../../../services/image-service/image.service';
+import {API_URL} from '../../../config';
 
 class ImageSnippet {
   constructor(public src: string, public file: File) {}
@@ -28,6 +29,7 @@ export class CreateBookComponent implements OnInit {
   authors: Author[] = [];
   categories: BookCategory[] = [];
   createBookParams: FormGroup;
+  URL = API_URL + '/api/v1/image';
 
   ngOnInit() {
     this.initFormGroup();
@@ -106,19 +108,16 @@ export class CreateBookComponent implements OnInit {
     }
   }
 
-  async uploadCoverPicture(event) {
-    let file: File = null;
+  async uploadCoverPicture(imageInput: any) {
     try {
-      file = event.files[0];
-      const reader = new FileReader();
-      let selectedFile = null;
-      reader.addEventListener('load', (event: any) => {
-        selectedFile = new ImageSnippet(event.target.result, file);
+      const fileToUpload: File = imageInput.files[0];
+      const fd = new FormData();
+      fd.append('file', fileToUpload);
+      this.imageService.uploadImage(fd).subscribe( response => {
+        const url: string = this.URL + '/getOne/' + response.id + '.jpg';
+        this.createBookParams.patchValue({coverPictureUrl: url});
       });
-      const response = await this.imageService.uploadImage(selectedFile).subscribe();
-      console.log(response);
     } catch (e) {
-      console.log(e);
     }
   }
 }
