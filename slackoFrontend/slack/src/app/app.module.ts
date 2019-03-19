@@ -21,6 +21,7 @@ import { LoginComponent } from './components/login-component/login/login.compone
 import {UserService} from './services/user-service/user.service';
 import {LoginService} from './services/login-service/login.service';
 import { ConfirmationComponent } from './components/registration-component/confirmation/confirmation.component';
+import {ImageService} from './services/image-service/image.service';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,7 @@ import { ConfirmationComponent } from './components/registration-component/confi
     ReactiveFormsModule
   ],
   providers: [BookService, AuthorService, BookCategoryService,
-    RestService, UserService, LoginService],
+    RestService, UserService, LoginService, ImageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

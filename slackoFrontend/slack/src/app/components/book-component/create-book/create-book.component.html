@@ -17,33 +17,45 @@
   <div class="row">
     <div class="col-md-2 order-md-1 col-sm-1 order-sm-1"></div>
     <div class="col-md-8 order-md-2 col-sm-10 order-sm-1">
-      <form>
+      <form (ngSubmit)="createBookButtonClicked(createBookParams)" [formGroup]="createBookParams">
         <div class="form-group">
           <label for="title">Title</label>
-          <input type="text" class="form-control" id="title" aria-describedby="titleHelp"  placeholder="Title">
+          <input [ngClass]="createBookParams.value.title.length === 0 ? '' : 'is-valid'"
+                 type="text" class="form-control" id="title" aria-describedby="titleHelp"
+                 placeholder="Title*" formControlName="title" >
         </div>
         <div class="row">
           <div class="col-md-8 order-md-1">
             <div class="form-group">
               <label for="isbn">Isbn</label>
-              <input type="text" class="form-control" id="isbn" aria-describedby="isbnHelp"  placeholder="ISBN">
+              <input [ngClass]="createBookParams.value.isbn.length === 0 ? '' :
+                     (createBookParams.value.isbn.length > 9 && createBookParams.value.isbn.length < 18
+                     && !createBookParams.controls['isbn'].errors) ? 'is-valid' : 'is-invalid'"
+                     type="text" class="form-control" id="isbn" aria-describedby="isbnHelp"
+                     placeholder="ISBN*" formControlName="isbn">
             </div>
           </div>
           <div class="col-md-4 order-md-2">
             <label for="isbn">Get from APIs</label>
-            <button type="button" class="btn btn-outline-primary btn-block">Get Books</button>
+            <button type="button" class="btn btn-outline-primary btn-block" (click)="getBooksFromAPIs()">Get Books</button>
           </div>
         </div>
         <div class="row">
           <div class="col-md-8 order-md-1">
             <div class="form-group">
               <label for="URL">Picture URL</label>
-              <input type="text" class="form-control" id="URL" aria-describedby="URLHelp"  placeholder="Title">
+              <input [ngClass]="createBookParams.value.coverPictureUrl.length === 0 ? '' :
+                    createBookParams.value.coverPictureUrl.substring(0,4) === 'http' &&
+                    (createBookParams.value.coverPictureUrl.substring(4,7) === '://' ||
+                    createBookParams.value.coverPictureUrl.substring(5,8) === '://')  ? 'is-valid' : 'is-invalid'"
+                type="text" class="form-control" id="URL" aria-describedby="URLHelp"
+                     placeholder="URL" formControlName="coverPictureUrl">
             </div>
           </div>
           <div class="col-md-4 order-md-2">
             <label for="isbn">Generate URL</label>
-            <button type="button" class="btn btn-outline-primary btn-block">Add image</button>
+            <input style="display: none" type="file"  accept="image/*" (change)="uploadCoverPicture(fileInput)" #fileInput>
+            <button type="button" class="btn btn-outline-primary btn-block" (click)="fileInput.click()">Add image</button>
           </div>
         </div>
         <div class="row">
@@ -52,7 +64,7 @@
             <div class="card mb-4 box-shadow">
               <div class="card-body">
                 <div class="force-to-the-bottom">
-                  <tag-input>
+                  <tag-input formControlName="authors">
                     <tag-input-dropdown
                       [autocompleteItems]="authors"
                       [showDropdownIfEmpty]="true"
@@ -68,7 +80,7 @@
             <div class="card mb-4 box-shadow">
               <div class="card-body">
                 <div class="force-to-the-bottom">
-                  <tag-input>
+                  <tag-input formControlName="categories">
                     <tag-input-dropdown
                       [autocompleteItems]="categories"
                       [showDropdownIfEmpty]="true"
@@ -84,11 +96,14 @@
           <div class="col-md-4 order-md-2">
             <div class="form-group">
               <label for="description">Book description</label>
-              <textarea class="form-control" id="description" rows="5" placeholder="Description"></textarea>
+              <textarea class="form-control" id="description" rows="5" placeholder="Description"
+                        formControlName="description"></textarea>
             </div>
             <div class="form-group">
               <label for="publicationDate">Publication date</label>
-              <input class="form-control" type="date" value="" id="publicationDate">
+              <input  [ngClass]="!createBookParams.controls['publicationDate'].errors ? 'is-valid' : ''"
+                      class="form-control" type="date" value="" id="publicationDate"
+                     formControlName="publicationDate">
             </div>
           </div>
         </div>
@@ -99,6 +114,7 @@
     <div class="col-md-2 order-md-3 col-sm-1 order-sm-3"></div>
   </div>
   <footer>
+    <br>
     <br>
     <hr>
     <p>© App Footer 2018-2019</p>

@@ -4,7 +4,6 @@ import static com.slack.utils.Mapping.*;
 
 import com.slack.services.UserService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -23,9 +22,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     private final UserService userService;
     private final BCryptPasswordEncoder bCryptPasswordEncoder;
     private final RestAuthenticationEntryPoint restAuthenticationEntryPoint;
-
-    @Value("${fe_url}")
-    private String feUrl;
 
     @Override
     public void configure(AuthenticationManagerBuilder auth) throws Exception {

@@ -4,6 +4,13 @@ import {BookCategory} from '../../../models/BookCategory';
 import {AuthorService} from '../../../services/author-service/author.service';
 import {BookCategoryService} from '../../../services/book-category-service/book-category.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {BookDTO} from '../../../models/DTOs/BookDTO';
+import {BookService} from '../../../services/book-service/book.service';
+import {ImageService} from '../../../services/image-service/image.service';
+
+class ImageSnippet {
+  constructor(public src: string, public file: File) {}
+}
 
 @Component({
   selector: 'app-create-book',
@@ -14,12 +21,13 @@ export class CreateBookComponent implements OnInit {
 
   constructor(private authorService: AuthorService,
               private bookCategoryService: BookCategoryService,
-              private formBuilder: FormBuilder) { }
+              private bookService: BookService,
+              private formBuilder: FormBuilder,
+              private imageService: ImageService) { }
 
   authors: Author[] = [];
   categories: BookCategory[] = [];
   createBookParams: FormGroup;
-
 
   ngOnInit() {
     this.initFormGroup();
@@ -29,8 +37,13 @@ export class CreateBookComponent implements OnInit {
   initFormGroup() {
     this.createBookParams = this.formBuilder.group({
       title: ['', [Validators.required]],
-      isbn: ['', [Validators.required]]
-    })
+      isbn: ['', [Validators.required, Validators.pattern('(([0-9Xx][- ]*){13}|([0-9Xx][- ]*){10})')]],
+      description: ['', [Validators.maxLength(2000)]],
+      coverPictureUrl: ['', [Validators.maxLength(1000)]],
+      publicationDate: ['', [Validators.max(Date.now()), Validators.required]],
+      authors: ['', [Validators.required]],
+      categories: ['', [Validators.required]]
+    });
   }
 
   async initParameters() {
@@ -46,5 +59,66 @@ export class CreateBookComponent implements OnInit {
   async initBookCategories() {
     const response: any = await this.bookCategoryService.getAllBookCategories();
     this.categories = response;
+  }
+
+  createBookButtonClicked(createBookParams: any) {
+    console.log(createBookParams)
+    let categories: BookCategory[] = [];
+    this.createBookParams.value.categories.forEach(category => {
+      if (category.id != null) {
+        categories.push(new BookCategory(category.id, category.bookCategoryName));
+      } else {
+        categories.push(new BookCategory(null, category.value));
+      }
+    });
+    let authors: Author[] = [];
+    this.createBookParams.value.authors.forEach(author => {
+      if (author.id != null) {
+        authors.push(new Author(author.id, author.authorFullName));
+      } else {
+        authors.push(new Author(null, author.value));
+      }
+    });
+    const bookDto = new BookDTO(this.createBookParams.value.isbn, this.createBookParams.value.title,
+      this.createBookParams.value.description, this.createBookParams.value.coverPictureUrl,
+      this.createBookParams.value.publicationDate, authors, categories);
+    this.bookService.createBook(bookDto).subscribe((response) => {
+      console.log(response);
+    });
+  }
+
+  async getBooksFromAPIs() {
+    const bookIsbn = this.createBookParams.value.isbn;
+    const response: any = await this.bookService.getBooksDTOByIsbn(bookIsbn);
+    const booksDTO: BookDTO[] = response;
+    if (booksDTO != null) {
+      if (booksDTO.length === 1) {
+        this.createBookParams.patchValue({
+          title: booksDTO[0].title,
+          isbn: bookIsbn,
+          description: booksDTO[0].description,
+          coverPictureUrl: booksDTO[0].coverPictureUrl,
+          publicationDate: booksDTO[0].publicationDate.toString().substring(0, 10),
+          authors: booksDTO[0].authors,
+          categories: booksDTO[0].categories
+        });
+      }
+    }
+  }
+
+  async uploadCoverPicture(event) {
+    let file: File = null;
+    try {
+      file = event.files[0];
+      const reader = new FileReader();
+      let selectedFile = null;
+      reader.addEventListener('load', (event: any) => {
+        selectedFile = new ImageSnippet(event.target.result, file);
+      });
+      const response = await this.imageService.uploadImage(selectedFile).subscribe();
+      console.log(response);
+    } catch (e) {
+      console.log(e);
+    }
   }
 }

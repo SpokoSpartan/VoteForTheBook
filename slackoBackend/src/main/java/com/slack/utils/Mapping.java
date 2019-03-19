@@ -10,6 +10,7 @@ public class Mapping {
     public static final String BOOK = "/book";
     public static final String AUTHOR = "/author";
     public static final String BOOK_CATEGORY = "/book-category";
+    public static final String IMAGE = "/image";
 
     public static final String GET_ALL = "/getAll/{name}";
     public static final String GET_ONE = "/getOne/{id}";
@@ -18,4 +19,5 @@ public class Mapping {
     public static final String UPDATE = "/update/{id}";
     public static final String REMOVE = "/remove/{id}";
     public static final String GET_BY_ISBN = "/get-by-isbn/{isbn}";
+    public static final String UPLOAD = "/upload";
 }
