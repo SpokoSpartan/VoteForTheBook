@@ -8,10 +8,7 @@ import {BookDTO} from '../../../models/DTOs/BookDTO';
 import {BookService} from '../../../services/book-service/book.service';
 import {ImageService} from '../../../services/image-service/image.service';
 import {API_URL} from '../../../config';
-
-class ImageSnippet {
-  constructor(public src: string, public file: File) {}
-}
+import {Chips} from '../../../models/Chips';
 
 @Component({
   selector: 'app-create-book',
@@ -67,18 +64,18 @@ export class CreateBookComponent implements OnInit {
     console.log(createBookParams)
     let categories: BookCategory[] = [];
     this.createBookParams.value.categories.forEach(category => {
-      if (category.id != null) {
+      if (category.id != null && category.id > 0) {
         categories.push(new BookCategory(category.id, category.bookCategoryName));
       } else {
-        categories.push(new BookCategory(null, category.value));
+        categories.push(new BookCategory(null, category.display));
       }
     });
     let authors: Author[] = [];
     this.createBookParams.value.authors.forEach(author => {
-      if (author.id != null) {
+      if (author.id != null && author.id > 0) {
         authors.push(new Author(author.id, author.authorFullName));
       } else {
-        authors.push(new Author(null, author.value));
+        authors.push(new Author(null, author.display));
       }
     });
     const bookDto = new BookDTO(this.createBookParams.value.isbn, this.createBookParams.value.title,
@@ -94,6 +91,15 @@ export class CreateBookComponent implements OnInit {
     const response: any = await this.bookService.getBooksDTOByIsbn(bookIsbn);
     const booksDTO: BookDTO[] = response;
     if (booksDTO != null) {
+      let authorsOnBeggining: Chips[] = [];
+      let categoriesOnBeggining: Chips[] = [];
+      let i = -1;
+      if (booksDTO[0].authors != null) {
+        booksDTO[0].authors.forEach(author => authorsOnBeggining.push(new Chips(author.authorFullName, i--)));
+      }
+      if (booksDTO[0].categories != null) {
+        booksDTO[0].categories.forEach(author => categoriesOnBeggining.push(new Chips(author.bookCategoryName, i--)));
+      }
       if (booksDTO.length === 1) {
         this.createBookParams.patchValue({
           title: booksDTO[0].title,
@@ -101,8 +107,8 @@ export class CreateBookComponent implements OnInit {
           description: booksDTO[0].description,
           coverPictureUrl: booksDTO[0].coverPictureUrl,
           publicationDate: booksDTO[0].publicationDate.toString().substring(0, 10),
-          authors: booksDTO[0].authors,
-          categories: booksDTO[0].categories
+          authors: authorsOnBeggining,
+          categories: categoriesOnBeggining
         });
       }
     }

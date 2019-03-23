@@ -13,10 +13,18 @@ export class NavbarComponent implements OnInit {
               private loginService: LoginService) { }
 
   isLoggedIn = false;
+  username = 'Not logged in';
+  role = '';
 
   ngOnInit() {
     this.loginService.getIsLoggedOk().subscribe(isLoggedIn => {
       this.isLoggedIn = isLoggedIn;
+    });
+    this.loginService.getRole().subscribe(role => {
+      this.role = role;
+    });
+    this.loginService.getUsername().subscribe(username => {
+      this.username = username;
     });
   }
 

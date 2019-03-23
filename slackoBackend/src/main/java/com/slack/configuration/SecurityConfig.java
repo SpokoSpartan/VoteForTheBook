@@ -12,6 +12,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;
+import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.security.web.authentication.logout.LogoutSuccessHandler;
 
 @Configuration
@@ -30,17 +31,24 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.csrf().disable().httpBasic()
-                .authenticationEntryPoint(restAuthenticationEntryPoint)
-                .and().cors().and()
-                .authorizeRequests()
-                .antMatchers("/error**", "/", "/login**", API_VERSION + BOOK + "/**", API_VERSION + USER + "/**").permitAll()
-                .antMatchers(API_VERSION + GROUP + "/**").hasRole("USER")
+        http.httpBasic()
+                    .authenticationEntryPoint(restAuthenticationEntryPoint)
                 .and()
-                .formLogin().failureHandler(customAuthenticationFailureHandler())
+                    .csrf().disable()
+                    .cors()
                 .and()
-                .logout().deleteCookies("JSESSIONID").logoutSuccessHandler(logoutSuccessHandler())
-                .invalidateHttpSession(true);
+                    .authorizeRequests()
+                        .antMatchers("/error**", "/", "/login**", API_VERSION + BOOK + "/**", API_VERSION + USER + "/**").permitAll()
+                        .antMatchers(API_VERSION + GROUP + "/**").hasRole("USER")
+                .and()
+                    .formLogin()
+                        .failureHandler(customAuthenticationFailureHandler())
+                        .successHandler(customAuthenticationSuccessHandler())
+                .and()
+                    .logout()
+                        .deleteCookies("JSESSIONID")
+                        .logoutSuccessHandler(logoutSuccessHandler())
+                        .invalidateHttpSession(true);
     }
 
     @Bean
@@ -51,5 +59,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Bean
     public LogoutSuccessHandler logoutSuccessHandler() {
         return new CustomLogoutSuccessHandler();
+    }
+
+    @Bean
+    public AuthenticationSuccessHandler customAuthenticationSuccessHandler() {
+        return new CustomAuthenticationSuccessHandler();
     }
 }

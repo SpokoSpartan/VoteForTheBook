@@ -22,6 +22,8 @@ import {UserService} from './services/user-service/user.service';
 import {LoginService} from './services/login-service/login.service';
 import { ConfirmationComponent } from './components/registration-component/confirmation/confirmation.component';
 import {ImageService} from './services/image-service/image.service';
+import {CookieService} from 'ngx-cookie-service';
+import { PresentBookComponent } from './components/book-component/present-book/present-book.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,8 @@ import {ImageService} from './services/image-service/image.service';
     NavbarComponent,
     LoginComponent,
     RegistrationComponent,
-    ConfirmationComponent
+    ConfirmationComponent,
+    PresentBookComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +47,7 @@ import {ImageService} from './services/image-service/image.service';
     ReactiveFormsModule
   ],
   providers: [BookService, AuthorService, BookCategoryService,
-    RestService, UserService, LoginService, ImageService],
+    RestService, UserService, LoginService, ImageService, CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
