@@ -10,7 +10,7 @@ VALUES ('wojtek4@gmail.com', 'Platfik', '$2a$10$VIgMONiuWy6t.f1xRkNeSuxyjLtrnzvU
 INSERT INTO author (author_full_name) VALUES ('Tomasz Nurkiewicz');
 INSERT INTO author (author_full_name) VALUES ('Ben Christensen');
 INSERT INTO book_category (book_category_name) VALUES ('Programming');
-INSERT INTO book ("cover_picture_url", "description", "isbn", "publication_date", "title")
+INSERT INTO "book" ("cover_picture_url", "description", "isbn", "publication_date", "title")
     VALUES ('http://books.google.com/books/content?id=ydMsjwEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api',
             'In today’s app-driven era, when programs are asynchronous and responsiveness is so vital,' ||
             ' reactive programming can help you write code that’s more reliable, easier to scale,' ||
@@ -30,7 +30,7 @@ INSERT INTO book_details_categories ("book_details_id", "category_id") VALUES (1
 
 INSERT INTO author (author_full_name) VALUES ('Henry Wong');
 INSERT INTO author (author_full_name) VALUES ('Scott Oaks');
-INSERT INTO book ("cover_picture_url", "description", "isbn", "publication_date", "title")
+INSERT INTO "book" ("cover_picture_url", "description", "isbn", "publication_date", "title")
 VALUES ('http://books.google.com/books/content?id=mB_92VqJbsMC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api',
         'Explains how to use Java''s portable platforms to program and use threads effectively and efficiently ' ||
         'while avoiding common mistakes.', '9780596007829', '2004-12-31T00:00:00.000+0000', 'Java Threads');
@@ -40,7 +40,7 @@ INSERT INTO book_details_categories ("book_details_id", "category_id") VALUES (2
 
 
 INSERT INTO author (author_full_name) VALUES ('Pablo Acuña');
-INSERT INTO book ("cover_picture_url", "description", "isbn", "publication_date", "title")
+INSERT INTO "book" ("cover_picture_url", "description", "isbn", "publication_date", "title")
 VALUES ('http://books.google.com/books/content?id=jlYXvgAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api',
         'This concise teaches you how to use the power of Docker and Kubernetes to deploy your Rails applications easily and efficiently.' ||
         ' Docker and Kubernetes are increasing in popularity every day, but what if you want to leverage their benefits for your ' ||
@@ -57,7 +57,7 @@ INSERT INTO book_details_categories ("book_details_id", "category_id") VALUES (3
 
 
 INSERT INTO author (author_full_name) VALUES ('Scott Chacon');
-INSERT INTO book ("cover_picture_url", "description", "isbn", "publication_date", "title")
+INSERT INTO "book" ("cover_picture_url", "description", "isbn", "publication_date", "title")
 VALUES ('http://books.google.com/books/content?id=qJsXefpx1AUC&printsec=frontcover&img=1&zoom=1&source=gbs_api',
         'Git is the version control system developed by Linus Torvalds for Linux kernel development. ' ||
         'It took the open source world by storm since its inception in 2005, and is used by small development shops and giants ' ||
@@ -69,7 +69,7 @@ INSERT INTO book_details_categories ("book_details_id", "category_id") VALUES (4
 
 
 INSERT INTO author (author_full_name) VALUES ('Project Management Institute');
-INSERT INTO book ("cover_picture_url", "description", "isbn", "publication_date", "title")
+INSERT INTO "book" ("cover_picture_url", "description", "isbn", "publication_date", "title")
 VALUES ('http://books.google.com/books/content?id=Tdv0vQEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api',
         'The Project Management Institute, Inc. (PMI) standards and guideline publications, of which the document ' ||
         'contained herein is one, are developed through a voluntary consensus standards development process. ' ||
@@ -87,7 +87,7 @@ INSERT INTO book_details_categories ("book_details_id", "category_id") VALUES (5
 
 INSERT INTO author (author_full_name) VALUES ('Cameron Newham');
 INSERT INTO author (author_full_name) VALUES ('Bill Rosenblatt');
-INSERT INTO book ("cover_picture_url", "description", "isbn", "publication_date", "title")
+INSERT INTO "book" ("cover_picture_url", "description", "isbn", "publication_date", "title")
 VALUES ('http://books.google.com/books/content?id=dNabAgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api',
         'O''Reilly''s bestselling book on Linux''s bash shell is at it again. Now that Linux is an established ' ||
         'player both as a server and on the desktop Learning the bash Shell has been updated and refreshed to ' ||
@@ -112,7 +112,7 @@ INSERT INTO book_details_categories ("book_details_id", "category_id") VALUES (6
 
 
 INSERT INTO author (author_full_name) VALUES ('Juha Hinkula');
-INSERT INTO book ("cover_picture_url", "description", "isbn", "publication_date", "title")
+INSERT INTO "book" ("cover_picture_url", "description", "isbn", "publication_date", "title")
 VALUES (null, 'Develop efficient and modern full-stack applications using Spring Boot and React 16 Key Features Develop' ||
         ' resourceful backends using Spring Boot and faultless frontends using React. Explore the techniques' ||
         ' involved in creating a full-stack app by going through a methodical approach. Learn to add CRUD functionalities' ||
@@ -128,7 +128,7 @@ INSERT INTO book_details_authors ("book_details_id", "author_id") VALUES (7, 10)
 INSERT INTO book_details_categories ("book_details_id", "category_id") VALUES (7, 1);
 
 INSERT INTO author (author_full_name) VALUES ('Rajesh Rv');
-INSERT INTO book ("cover_picture_url", "description", "isbn", "publication_date", "title")
+INSERT INTO "book" ("cover_picture_url", "description", "isbn", "publication_date", "title")
 VALUES ('http://books.google.com/books/content?id=7Gu7DAEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api',
         null, '9781786466686', '2016-12-31T00:00:00.000+0000', 'Spring Microservices');
 INSERT INTO book_details_authors ("book_details_id", "author_id") VALUES (8, 11);
@@ -136,7 +136,7 @@ INSERT INTO book_details_categories ("book_details_id", "category_id") VALUES (8
 
 INSERT INTO author (author_full_name) VALUES ('Pranav Shukla');
 INSERT INTO author (author_full_name) VALUES ('Sharath Kumar M. N.');
-INSERT INTO book ("cover_picture_url", "description", "isbn", "publication_date", "title")
+INSERT INTO "book" ("cover_picture_url", "description", "isbn", "publication_date", "title")
 VALUES ('http://books.google.com/books/content?id=hid2swEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api',
         'Deliver end-to-end real-time distributed data processing solutions by leveraging the power of ' ||
         'Elastic Stack 6.0 Key Features - Get to grips with the new features introduced in Elastic Stack 6.0 - ' ||
@@ -161,7 +161,7 @@ INSERT INTO book_details_categories ("book_details_id", "category_id") VALUES (9
 
 INSERT INTO author (author_full_name) VALUES ('Steven Feuerstein');
 INSERT INTO author (author_full_name) VALUES ('Bill Pribyl');
-INSERT INTO book ("cover_picture_url", "description", "isbn", "publication_date", "title")
+INSERT INTO "book" ("cover_picture_url", "description", "isbn", "publication_date", "title")
 VALUES ('https://itbook.store/img/books/9781449324452.png',
         'Considered the best Oracle PL/SQL programming guide by the Oracle community, this definitive guide ' ||
         'is precisely what you need to make the most of Oracle''s powerful procedural language. The sixth ' ||

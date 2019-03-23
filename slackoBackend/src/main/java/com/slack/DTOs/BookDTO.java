@@ -26,7 +26,7 @@ public class BookDTO {
     @NotBlank(message = "Title is required")
     private String title;
 
-    @Size(max = 2000, message = "Description can't exceed 2000 characters")
+    @Size(max = 20000, message = "Description can't exceed 20000 characters")
     private String description;
 
     @Size(max = 1000, message = "Cover picture URL can't exceed 1000 characters")
