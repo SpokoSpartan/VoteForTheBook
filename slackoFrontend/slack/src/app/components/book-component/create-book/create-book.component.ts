@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Pipe, PipeTransform} from '@angular/core';
 import {Author} from '../../../models/Author';
 import {BookCategory} from '../../../models/BookCategory';
 import {AuthorService} from '../../../services/author-service/author.service';
@@ -9,6 +9,19 @@ import {BookService} from '../../../services/book-service/book.service';
 import {ImageService} from '../../../services/image-service/image.service';
 import {API_URL} from '../../../config';
 import {Chips} from '../../../models/Chips';
+import {DatePipe} from '@angular/common';
+import {SnackbarService} from 'ngx-snackbar';
+import {Book} from '../../../models/Book';
+import {Router} from '@angular/router';
+
+@Pipe({
+  name: 'dateFormat'
+})
+export class DateFormatPipe extends DatePipe implements PipeTransform {
+  transform(value: any, args?: any): any {
+    return super.transform(value, 'yyyy-MM-dd');
+  }
+}
 
 @Component({
   selector: 'app-create-book',
@@ -21,12 +34,19 @@ export class CreateBookComponent implements OnInit {
               private bookCategoryService: BookCategoryService,
               private bookService: BookService,
               private formBuilder: FormBuilder,
-              private imageService: ImageService) { }
+              private imageService: ImageService,
+              private dateFormatPipe: DateFormatPipe,
+              private snackbarService: SnackbarService,
+              private router: Router) { }
 
-  authors: Author[] = [];
-  categories: BookCategory[] = [];
+  authors: Chips[] = [];
+  authorsDB: Author[] = [];
+  categories: Chips[] = [];
+  categoriesDB: BookCategory[] = [];
   createBookParams: FormGroup;
   URL = API_URL + '/api/v1/image';
+  actualDate = this.dateFormatPipe.transform(new Date());
+  waitingForResponse = false;
 
   ngOnInit() {
     this.initFormGroup();
@@ -52,53 +72,76 @@ export class CreateBookComponent implements OnInit {
 
   async initAuthors() {
     const response: any = await this.authorService.getAllAuthors();
-    this.authors = response;
+    this.authorsDB = response;
+    this.authorsDB.forEach(author => this.authors.push(new Chips(author.authorFullName, author.authorFullName)));
   }
 
   async initBookCategories() {
     const response: any = await this.bookCategoryService.getAllBookCategories();
-    this.categories = response;
+    this.categoriesDB = response;
+    this.categoriesDB.forEach(category => this.categories.push(new Chips(category.bookCategoryName, category.bookCategoryName)));
   }
 
   createBookButtonClicked(createBookParams: any) {
-    console.log(createBookParams)
     let categories: BookCategory[] = [];
-    this.createBookParams.value.categories.forEach(category => {
-      if (category.id != null && category.id > 0) {
-        categories.push(new BookCategory(category.id, category.bookCategoryName));
-      } else {
-        categories.push(new BookCategory(null, category.display));
+    this.createBookParams.value.categories.forEach(chip => {
+      let existOnDB = false;
+      this.categoriesDB.forEach(category => {
+        if (category.bookCategoryName === chip.display) {
+          categories.push(category);
+          existOnDB = true;
+        }
+      });
+      if (!existOnDB) {
+        categories.push(new BookCategory(null, chip.display));
       }
     });
     let authors: Author[] = [];
-    this.createBookParams.value.authors.forEach(author => {
-      if (author.id != null && author.id > 0) {
-        authors.push(new Author(author.id, author.authorFullName));
-      } else {
-        authors.push(new Author(null, author.display));
+    this.createBookParams.value.authors.forEach(chip => {
+      let existOnDB = false;
+      this.authorsDB.forEach(author => {
+        if (author.authorFullName === chip.display) {
+          authors.push(author);
+          existOnDB = true;
+        }
+      });
+      if (!existOnDB) {
+        authors.push(new Author(null, chip.display));
       }
     });
     const bookDto = new BookDTO(this.createBookParams.value.isbn, this.createBookParams.value.title,
       this.createBookParams.value.description, this.createBookParams.value.coverPictureUrl,
       this.createBookParams.value.publicationDate, authors, categories);
     this.bookService.createBook(bookDto).subscribe((response) => {
-      console.log(response);
+      const book: Book = response;
+      console.log(book);
+      if (book.id == null) {
+        this.addSnackbar('An error occur: open console', 4000, 'red');
+      } else {
+        this.addSnackbar('Book created successfully', 4000, 'green');
+        this.router.navigateByUrl('present-books');
+      }
     });
   }
 
   async getBooksFromAPIs() {
+    this.addSnackbar('Please wait ', 10000, 'green');
+    this.waitingForResponse = true;
     const bookIsbn = this.createBookParams.value.isbn;
     const response: any = await this.bookService.getBooksDTOByIsbn(bookIsbn);
     const booksDTO: BookDTO[] = response;
-    if (booksDTO != null) {
+    if (booksDTO != null && booksDTO.length > 0) {
       let authorsOnBeggining: Chips[] = [];
       let categoriesOnBeggining: Chips[] = [];
-      let i = -1;
       if (booksDTO[0].authors != null) {
-        booksDTO[0].authors.forEach(author => authorsOnBeggining.push(new Chips(author.authorFullName, i--)));
+        booksDTO[0].authors.forEach(author => {
+          authorsOnBeggining.push(new Chips(author.authorFullName, author.authorFullName));
+        });
       }
       if (booksDTO[0].categories != null) {
-        booksDTO[0].categories.forEach(author => categoriesOnBeggining.push(new Chips(author.bookCategoryName, i--)));
+        booksDTO[0].categories.forEach(author => {
+          categoriesOnBeggining.push(new Chips(author.bookCategoryName, author.bookCategoryName));
+        });
       }
       if (booksDTO.length === 1) {
         this.createBookParams.patchValue({
@@ -111,7 +154,11 @@ export class CreateBookComponent implements OnInit {
           categories: categoriesOnBeggining
         });
       }
+      this.clearSnackbar();
+    } else {
+      this.addSnackbar('Nothing found ', 3000, 'black');
     }
+    this.waitingForResponse = false;
   }
 
   async uploadCoverPicture(imageInput: any) {
@@ -125,5 +172,23 @@ export class CreateBookComponent implements OnInit {
       });
     } catch (e) {
     }
+  }
+
+  addSnackbar(message: string, time: number, col: string) {
+    this.snackbarService.add({
+      msg: message.bold(),
+      timeout: time,
+      action: {
+        text: 'OK',
+        onClick: (snack) => {
+         this.snackbarService.clear();
+        }
+      },
+      color: col,
+      background: 'Silver'
+    });
+  }
+  clearSnackbar() {
+    this.snackbarService.clear();
   }
 }

@@ -19,27 +19,27 @@
     <div class="col-md-8 order-md-2 col-sm-10 order-sm-1">
       <form (ngSubmit)="createBookButtonClicked(createBookParams)" [formGroup]="createBookParams">
         <div class="form-group">
-          <label for="title">Title</label>
+          <label for="title">Title*</label>
           <input [ngClass]="createBookParams.value.title.length === 0 ? '' : 'is-valid'"
                  type="text" class="form-control" id="title" aria-describedby="titleHelp"
-                 placeholder="Title*" formControlName="title" >
+                 placeholder="Title" formControlName="title" >
         </div>
         <div class="row">
           <div class="col-md-8 order-md-1">
             <div class="form-group">
-              <label for="isbn">Isbn</label>
+              <label for="isbn">Isbn*</label>
               <input [ngClass]="createBookParams.value.isbn.length === 0 ? '' :
                      (createBookParams.value.isbn.length > 9 && createBookParams.value.isbn.length < 18
                      && !createBookParams.controls['isbn'].errors) ? 'is-valid' : 'is-invalid'"
                      type="text" class="form-control" id="isbn" aria-describedby="isbnHelp"
-                     placeholder="ISBN*" formControlName="isbn">
+                     placeholder="ISBN" formControlName="isbn">
             </div>
           </div>
           <div class="col-md-4 order-md-2">
             <label for="isbn">Get from APIs</label>
             <button type="button" class="btn btn-outline-primary btn-block" (click)="getBooksFromAPIs()"
             [disabled]="!(createBookParams.value.isbn.length > 9 && createBookParams.value.isbn.length < 18
-                     && !createBookParams.controls['isbn'].errors)">Get Books</button>
+                     && !createBookParams.controls['isbn'].errors) || waitingForResponse">Get Books</button>
           </div>
         </div>
         <div class="row">
@@ -62,23 +62,21 @@
         </div>
         <div class="row">
           <div class="col-md-8 order-md-1">
-            <label for="isbn">Authors</label>
-            <div class="card mb-4 box-shadow valid-feedback is-valid">
+            <label for="isbn">Authors*</label>
+            <div class="card mb-4 box-shadow">
               <div class="card-body">
                 <div class="force-to-the-bottom">
                   <tag-input formControlName="authors">
                     <tag-input-dropdown
                       [autocompleteItems]="authors"
                       [showDropdownIfEmpty]="true"
-                      [dynamicUpdate]="false"
-                      displayBy="authorFullName"
-                      identifyBy="id">
+                      [dynamicUpdate]="false">
                     </tag-input-dropdown>
                   </tag-input>
                 </div>
               </div>
             </div>
-            <label for="isbn">Categories</label>
+            <label for="isbn">Categories*</label>
             <div class="card mb-4 box-shadow">
               <div class="card-body">
                 <div class="force-to-the-bottom">
@@ -86,9 +84,7 @@
                     <tag-input-dropdown
                       [autocompleteItems]="categories"
                       [showDropdownIfEmpty]="true"
-                      [dynamicUpdate]="false"
-                      displayBy="bookCategoryName"
-                      identifyBy="id">
+                      [dynamicUpdate]="false">
                     </tag-input-dropdown>
                   </tag-input>
                 </div>
@@ -103,14 +99,22 @@
             </div>
             <div class="form-group">
               <label for="publicationDate">Publication date</label>
-              <input  [ngClass]="!createBookParams.controls['publicationDate'].errors ? 'is-valid' : ''"
-                      class="form-control" type="date" value="" id="publicationDate"
+              <input  [ngClass]="!createBookParams.controls['publicationDate'].errors &&
+                       createBookParams.value.publicationDate < actualDate ? 'is-valid' :
+                       createBookParams.value.publicationDate === '' ? '' : 'is-invalid'"
+                      class="form-control" type="date" maxDate="actualDate" value="" id="publicationDate"
                      formControlName="publicationDate">
             </div>
           </div>
         </div>
         <hr>
-        <button class="btn btn-primary btn-lg btn-block" type="submit">Create new copy of the book</button>
+        <button class="btn btn-primary btn-lg btn-block" type="submit" [disabled]="
+                createBookParams.controls['isbn'].errors || ((createBookParams.value.coverPictureUrl.substring(0,4) !== 'http' ||
+                !(createBookParams.value.coverPictureUrl.substring(4,7) === '://' ||
+                createBookParams.value.coverPictureUrl.substring(5,8) === '://')) && (createBookParams.value.coverPictureUrl.length !== 0))
+                || createBookParams.value.authors.length < 1 || createBookParams.value.categories.length < 1 ||
+                ((createBookParams.controls['publicationDate'].errors || createBookParams.value.publicationDate >= actualDate) &&
+                createBookParams.value.publicationDate !== '') ">Create new copy of the book</button>
       </form>
     </div>
     <div class="col-md-2 order-md-3 col-sm-1 order-sm-3"></div>
@@ -121,4 +125,5 @@
     <hr>
     <p>© App Footer 2018-2019</p>
   </footer>
+  <ngx-snackbar [position]="'bottom-center'" [max]="1"></ngx-snackbar>
 </div>

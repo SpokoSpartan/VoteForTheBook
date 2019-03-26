@@ -24,6 +24,7 @@
             ],
             "styles": [
               "src/styles.css",
+              "../slack/node_modules/ngx-snackbar/bundles/style.css",
               "../slack/node_modules/bootstrap/dist/css/bootstrap.css"
             ],
             "scripts": [

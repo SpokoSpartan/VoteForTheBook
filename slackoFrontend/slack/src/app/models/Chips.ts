@@ -1,8 +1,8 @@
 export class Chips {
   display: string;
-  value: number;
+  value: string;
 
-  constructor(display: string, value: number) {
+  constructor(display: string, value: string) {
     this.display = display;
     this.value = value;
   }

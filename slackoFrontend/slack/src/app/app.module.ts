@@ -9,7 +9,7 @@ import {BookService} from './services/book-service/book.service';
 import {RouterModule} from '@angular/router';
 import {routes} from './rootes';
 import {HttpClientModule} from '@angular/common/http';
-import { CreateBookComponent } from './components/book-component/create-book/create-book.component';
+import {CreateBookComponent, DateFormatPipe} from './components/book-component/create-book/create-book.component';
 import {TagInputModule} from 'ngx-chips';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
@@ -24,6 +24,7 @@ import { ConfirmationComponent } from './components/registration-component/confi
 import {ImageService} from './services/image-service/image.service';
 import {CookieService} from 'ngx-cookie-service';
 import { PresentBookComponent } from './components/book-component/present-book/present-book.component';
+import {SnackbarModule} from 'ngx-snackbar';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,7 @@ import { PresentBookComponent } from './components/book-component/present-book/p
     LoginComponent,
     RegistrationComponent,
     ConfirmationComponent,
-    PresentBookComponent
+    PresentBookComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,10 +45,12 @@ import { PresentBookComponent } from './components/book-component/present-book/p
     TagInputModule,
     BrowserAnimationsModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SnackbarModule.forRoot()
   ],
   providers: [BookService, AuthorService, BookCategoryService,
-    RestService, UserService, LoginService, ImageService, CookieService],
+    RestService, UserService, LoginService, ImageService, CookieService,
+    DateFormatPipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

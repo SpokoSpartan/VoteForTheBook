@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {API_URL} from '../../config';
 import {HttpClient, HttpErrorResponse} from '@angular/common/http';
 import {catchError} from 'rxjs/operators';
@@ -7,7 +7,7 @@ import {Book} from '../../models/Book';
 import {BookDTO} from '../../models/DTOs/BookDTO';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class BookService {
 
@@ -17,7 +17,7 @@ export class BookService {
   }
 
   async getBooksDTOByIsbn(isbn: string) {
-    return await this.http.get<BookDTO>(this.URL + '/get-by-isbn/' + isbn, { withCredentials: true })
+    return await this.http.get<BookDTO>(this.URL + '/get-by-isbn/' + isbn, {withCredentials: true})
       .pipe(
         catchError(this.handleError)
       ).toPromise();
@@ -51,13 +51,9 @@ export class BookService {
       );
   }
 
-  private handleError(error: HttpErrorResponse) {
-    if (error.error instanceof ErrorEvent) {
-      console.error('An error occurred:', error.error.message);
-    } else {
-      console.error(
-        `Backend returned code ${error.status}, ` +
-        `exception was: ${error.error.message}`);
+  private async handleError(error: HttpErrorResponse) {
+    if (error instanceof HttpErrorResponse) {
+      console.log(error.error.message);
     }
     return throwError(error);
   }
