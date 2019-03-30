@@ -34,20 +34,24 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.httpBasic()
                     .authenticationEntryPoint(restAuthenticationEntryPoint)
                 .and()
-                    .csrf().disable()
+                    .exceptionHandling().authenticationEntryPoint(restAuthenticationEntryPoint)
+                .and()
                     .cors()
                 .and()
+                    .csrf().disable()
                     .authorizeRequests()
-                        .antMatchers("/error**", "/", "/login**", API_VERSION + BOOK + "/**", API_VERSION + USER + "/**").permitAll()
-                        .antMatchers(API_VERSION + GROUP + "/**").hasRole("USER")
+                        .antMatchers("/error**", "/", "/login**", API_VERSION + USER + "/**").permitAll()
+                        .antMatchers(API_VERSION + GROUP + "/**",
+                                API_VERSION + BOOK + "/**").hasRole("USER")
                 .and()
+
                     .formLogin()
                         .failureHandler(customAuthenticationFailureHandler())
                         .successHandler(customAuthenticationSuccessHandler())
                 .and()
                     .logout()
-                        .deleteCookies("JSESSIONID")
                         .logoutSuccessHandler(logoutSuccessHandler())
+                        .deleteCookies("JSESSIONID")
                         .invalidateHttpSession(true);
     }
 

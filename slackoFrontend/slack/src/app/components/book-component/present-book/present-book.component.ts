@@ -41,7 +41,7 @@ export class PresentBookComponent implements OnInit {
     if (this.innerWidth < 600) {
       this.bookWidth = this.innerWidth - 84;
       this.bookHeight = this.bookWidth * 1.28;
-      this.margin = 17;
+      this.margin = 13;
     } else if (this.innerWidth < 850) {
       this.bookWidth = (this.innerWidth - 262) / 2;
       this.bookHeight = this.bookWidth * 1.28;
@@ -53,55 +53,69 @@ export class PresentBookComponent implements OnInit {
     } else if (this.innerWidth < 1600) {
       this.bookWidth = (this.innerWidth - 488) / 4;
       this.bookHeight = this.bookWidth * 1.28;
-      this.margin = 100;
+      this.margin = 108;
     } else {
       this.bookWidth = (this.innerWidth - 656) / 5;
       this.bookHeight = this.bookWidth * 1.28;
-      this.margin = 150;
+      this.margin = 160;
     }
     this.cutTitle(this.bookWidth / 9);
     this.resizeImages();
   }
 
   resizeImages() {
-    this.target = document.getElementById('row-for-books');
-    this.target.style.marginLeft = Math.floor(this.margin) + 'px';
-    this.target.style.marginRight = Math.floor(this.margin) + 'px';
+    try {
+      this.target = document.getElementById('row-for-books');
+      this.target.style.marginLeft = Math.floor(this.margin) + 'px';
+      this.target.style.marginRight = Math.floor(this.margin) + 'px';
 
-    this.books.forEach(book => {
-      let elementId;
-      if (book.coverPictureUrl != null && book.coverPictureUrl !== '') {
-        elementId = 'picture' + book.id;
-      } else {
-        elementId = 'defaultPicture' + book.id;
-      }
-      this.target = document.getElementById(elementId);
-      this.target.style.width = (Math.floor(this.bookWidth) + 'px');
-      this.target.style.height = (Math.floor(this.bookHeight) + 'px');
-      this.target = document.getElementById('card' + book.id);
-      this.target.style.width = (Math.floor(this.bookWidth + 34) + 'px');
-    });
+      this.books.forEach(book => {
+        let elementId;
+        if (book.coverPictureUrl != null && book.coverPictureUrl !== '') {
+          elementId = 'picture' + book.id;
+        } else {
+          elementId = 'defaultPicture' + book.id;
+        }
+        this.target = document.getElementById(elementId);
+        this.target.style.width = (Math.floor(this.bookWidth) + 'px');
+        this.target.style.height = (Math.floor(this.bookHeight) + 'px');
+        this.target = document.getElementById('card' + book.id);
+        this.target.style.width = (Math.floor(this.bookWidth + 34) + 'px');
+      });
+    } catch (e) {
+      // not everyone books returned yet!!
+    }
   }
 
   async getAllBooks() {
     this.books = [];
     const response: any = await this.bookService.getAllBook();
     this.books = response;
-    this.cutTitle(200);
+    if (this.books != null && this.books.length > 0) {
+      const book: Book = Object.assign({}, this.books[this.books.length - 1]);
+      book.id = null;
+      this.books.push(book);
+    }
   }
 
   cutTitle(length: number) {
     this.bookTitle = [];
-    this.books.forEach(book => {
-      if (book.title.length > length) {
-        this.bookTitle.push(book.title.substring(0, length) + '...');
-      } else {
-        this.bookTitle.push(book.title);
-      }
-    });
+    if (this.books != null && this.books.length > 0) {
+      this.books.forEach(book => {
+        if (book.title.length > length) {
+          this.bookTitle.push(book.title.substring(0, length) + '...');
+        } else {
+          this.bookTitle.push(book.title);
+        }
+      });
+    }
   }
 
   voteForBook(id: number) {
     console.log(id);
+  }
+
+  initSize() {
+    this.setBookSize();
   }
 }

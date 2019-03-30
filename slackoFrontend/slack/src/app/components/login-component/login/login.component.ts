@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
   async loginButtonClicked(registrationParams: any) {
     const isStatusOk = await this.loginService.loginUser(this.loginParams.value.email, this.loginParams.value.password)
     if (isStatusOk === true) {
-      this.router.navigateByUrl('create-book');
+      this.router.navigateByUrl('present-books');
     } else {
       this.isLoggedOk = false;
     }

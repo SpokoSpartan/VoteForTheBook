@@ -39,4 +39,13 @@ export class NavbarComponent implements OnInit {
   logoutButtonClicked() {
     this.loginService.logoutUser();
   }
+
+  voteButtonClicked() {
+    this.router.navigateByUrl('present-books');
+  }
+
+  createBookButtonClicked() {
+    this.router.navigateByUrl('create-book');
+  }
+
 }

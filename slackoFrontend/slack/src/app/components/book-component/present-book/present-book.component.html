@@ -3,10 +3,10 @@
     <div class="col-md-1 order-md-1"></div>
     <div class="col-md-10 order-md-2">
       <div class="py-5 text-center">
-        <h2>Create book</h2>
-        <p class="lead">The form below allows you to create a copy of the book.
-          From that moment, the book will be included in the voting.
-          Only you can remove it and at the same time exclude it from voting.</p>
+        <h2>Vote for books</h2>
+        <p class="lead">The form below allows you to vote for 3 books you like.
+          Three of the most popular books will be available in the next voting.
+          If you want to see more information about the book, click on the picture.</p>
       </div>
     </div>
     <div class="col-md-1 order-md-3"></div>
@@ -15,7 +15,7 @@
 <div class="album">
   <div class="row" id="row-for-books">
     <div *ngFor="let book of books">
-      <div class="col-md-4 col-lg-4 col-sm-4 col-xl-4">
+      <div class="col-md-4 col-lg-4 col-sm-4 col-xl-4" *ngIf="book.id !== null">
         <div class="card mb-4 box-shadow" id="card{{book.id}}">
           <div class="col-12">
             <h6>{{bookTitle[book.id - 1]}}</h6>
@@ -32,11 +32,17 @@
               <div class="btn-group">
                 <button type="button" class="btn btn-outline-primary" (click)="voteForBook(book.id)">Vote</button>
               </div>
-              <small class="text-muted"><img src="https://img.icons8.com/color/48/000000/checked.png"></small>
+              <div *ngIf="book.id % 2 === 0">
+                <small class="text-muted"><img src="https://img.icons8.com/color/48/000000/cancel-2.png"></small>
+              </div>
+              <div *ngIf="book.id % 2 === 1">
+                <small class="text-muted"><img src="https://img.icons8.com/color/48/000000/checked.png"></small>
+              </div>
             </div>
           </div>
         </div>
       </div>
+      <div *ngIf="book.id === null">{{initSize()}}</div>
     </div>
   </div>
 </div>
