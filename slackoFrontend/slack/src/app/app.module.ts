@@ -36,6 +36,7 @@ import {SnackbarModule} from 'ngx-snackbar';
     RegistrationComponent,
     ConfirmationComponent,
     PresentBookComponent,
+    DateFormatPipe
   ],
   imports: [
     BrowserModule,

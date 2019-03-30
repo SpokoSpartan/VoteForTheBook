@@ -1,25 +1,50 @@
-<div class="album py-5">
-  <div class="container">
-    <div class="row">
-      <div *ngFor="let book of books">
-        <div class="container">
-        <div class="col-md-4">
-          <div class="card mb-4 box-shadow">
-            <img class="card-img-top align-items-center" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" style="height: 225px; width: 170px; display: block;" [src]="book.coverPictureUrl" data-holder-rendered="true">
-            <div class="card-body">
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                </div>
-                <small class="text-muted">9 mins</small>
+<div class="container">
+  <div class="row">
+    <div class="col-md-1 order-md-1"></div>
+    <div class="col-md-10 order-md-2">
+      <div class="py-5 text-center">
+        <h2>Create book</h2>
+        <p class="lead">The form below allows you to create a copy of the book.
+          From that moment, the book will be included in the voting.
+          Only you can remove it and at the same time exclude it from voting.</p>
+      </div>
+    </div>
+    <div class="col-md-1 order-md-3"></div>
+  </div>
+</div>
+<div class="album">
+  <div class="row" id="row-for-books">
+    <div *ngFor="let book of books">
+      <div class="col-md-4 col-lg-4 col-sm-4 col-xl-4">
+        <div class="card mb-4 box-shadow" id="card{{book.id}}">
+          <div class="col-12">
+            <h6>{{bookTitle[book.id - 1]}}</h6>
+            <img class="card-img-top align-items-center" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail"
+                 style="display: block;" *ngIf="!(book.coverPictureUrl == null || book.coverPictureUrl == '')"
+                 [src]="book.coverPictureUrl" id="picture{{book.id}}" alt="picture{{book.id}}">
+            <img class="card-img-top align-items-center" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail"
+                 style="display: block;" *ngIf="book.coverPictureUrl == null || book.coverPictureUrl == ''"
+                 id="defaultPicture{{book.id}}" alt="defaultPicture{{book.id}}"
+                 src="https://img.icons8.com/dusk/64/000000/bookmark.png">
+          </div>
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <button type="button" class="btn btn-outline-primary" (click)="voteForBook(book.id)">Vote</button>
               </div>
+              <small class="text-muted"><img src="https://img.icons8.com/color/48/000000/checked.png"></small>
             </div>
           </div>
         </div>
       </div>
-      </div>
     </div>
   </div>
+</div>
+<div class="container">
+  <footer>
+    <br>
+    <br>
+    <hr>
+    <p>© App Footer 2018-2019</p>
+  </footer>
 </div>
