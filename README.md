@@ -1,4 +1,3 @@
 # SpokoSlack
-App for group communication!
+The app to vote for the best book to read at work.
 
-Travis test!
