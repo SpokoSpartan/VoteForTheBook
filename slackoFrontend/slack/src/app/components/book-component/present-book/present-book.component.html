@@ -29,13 +29,16 @@
           </div>
           <div class="card-body">
             <div class="d-flex justify-content-between align-items-center">
-              <div class="btn-group">
+              <div class="btn-group" *ngIf="book.isVotedByUser === false">
                 <button type="button" class="btn btn-outline-primary" (click)="voteForBook(book.id)">Vote</button>
               </div>
-              <div *ngIf="book.id % 2 === 0">
+              <div class="btn-group" *ngIf="book.isVotedByUser === true">
+                <button type="button" class="btn btn-outline-primary" (click)="cancelVoteForBook(book.id)">Cancel vote</button>
+              </div>
+              <div *ngIf="book.isVotedByUser === false">
                 <small class="text-muted"><img src="https://img.icons8.com/color/48/000000/cancel-2.png"></small>
               </div>
-              <div *ngIf="book.id % 2 === 1">
+              <div *ngIf="book.isVotedByUser === true">
                 <small class="text-muted"><img src="https://img.icons8.com/color/48/000000/checked.png"></small>
               </div>
             </div>

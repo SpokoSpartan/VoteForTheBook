@@ -20,6 +20,7 @@ spring:
           temp:
             use_jdbc_metadata_defaults: false
     open-in-view: true
+    show-sql: true
   servlet:
     multipart:
       max-file-size: -1

@@ -32,17 +32,19 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.httpBasic()
-                    .authenticationEntryPoint(restAuthenticationEntryPoint)
+                .authenticationEntryPoint(restAuthenticationEntryPoint)
                 .and()
-                    .exceptionHandling().authenticationEntryPoint(restAuthenticationEntryPoint)
+                .exceptionHandling().authenticationEntryPoint(restAuthenticationEntryPoint)
                 .and()
                     .cors()
                 .and()
                     .csrf().disable()
                     .authorizeRequests()
-                        .antMatchers("/error**", "/", "/login**", API_VERSION + USER + "/**").permitAll()
+                        .antMatchers("/error**", "/", "/login**", API_VERSION + USER + "/**",
+                                API_VERSION + VOTE + "/**").permitAll()
                         .antMatchers(API_VERSION + GROUP + "/**",
-                                API_VERSION + BOOK + "/**").hasRole("USER")
+                                API_VERSION + BOOK + "/**",
+                                API_VERSION + VOTE + "/**").hasRole("USER")
                 .and()
 
                     .formLogin()

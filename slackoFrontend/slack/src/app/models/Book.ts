@@ -10,9 +10,10 @@ export class Book {
   publicationDate: Date;
   authors: Author[];
   categories: BookCategory[];
+  isVotedByUser: boolean;
 
   constructor(id: number, isbn: string, title: string, description: string, coverPictureUrl: string,
-              publicationDate: Date, authors: Author[], categories: BookCategory[]) {
+              publicationDate: Date, authors: Author[], categories: BookCategory[], isVotedByUser: boolean) {
     this.id = id;
     this.isbn = isbn;
     this.title = title;
@@ -21,5 +22,6 @@ export class Book {
     this.publicationDate = publicationDate;
     this.authors = authors;
     this.categories = categories;
+    this.isVotedByUser = isVotedByUser;
   }
 }

@@ -89,12 +89,12 @@ export class PresentBookComponent implements OnInit {
 
   async getAllBooks() {
     this.books = [];
-    const response: any = await this.bookService.getAllBook();
-    this.books = response;
-    if (this.books != null && this.books.length > 0) {
-      const book: Book = Object.assign({}, this.books[this.books.length - 1]);
-      book.id = null;
-      this.books.push(book);
+    try {
+      const response: any = await this.bookService.getAllBook();
+      this.books = response;
+      this.configureLastBook();
+    } catch (e) {
+      console.log(e);
     }
   }
 
@@ -111,11 +111,42 @@ export class PresentBookComponent implements OnInit {
     }
   }
 
-  voteForBook(id: number) {
-    console.log(id);
+  async voteForBook(id: number) {
+    try {
+      await this.bookService.voteForBook(id).subscribe((response) => {
+        const myBooks: Book[] = response;
+        this.books = [];
+        this.books = myBooks;
+        this.configureLastBook();
+      });
+    } catch (e) {
+      console.log('jestem');
+      console.log(e.error.message);
+    }
+  }
+
+  async cancelVoteForBook(id: number) {
+    try {
+      await this.bookService.cancelVoteForBook(id).subscribe((response) => {
+        const myBooks: Book[] = response;
+        this.books = [];
+        this.books = myBooks;
+        this.configureLastBook();
+      });
+    } catch (e) {
+      console.log(e);
+    }
   }
 
   initSize() {
     this.setBookSize();
+  }
+
+  configureLastBook() {
+    if (this.books != null && this.books.length > 0) {
+      const book: Book = Object.assign({}, this.books[this.books.length - 1]);
+      book.id = null;
+      this.books.push(book);
+    }
   }
 }

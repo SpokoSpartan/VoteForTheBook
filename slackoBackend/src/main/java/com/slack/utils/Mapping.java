@@ -11,7 +11,10 @@ public class Mapping {
     public static final String AUTHOR = "/author";
     public static final String BOOK_CATEGORY = "/book-category";
     public static final String IMAGE = "/image";
+    public static final String VOTE = "/vote";
 
+    public static final String ADD_VOTE_FOR = "/add/for/{bookId}";
+    public static final String REMOVE_VOTE_FROM = "/remove/from/{bookId}";
     public static final String GET_ALL = "/getAll/{name}";
     public static final String GET_ONE = "/getOne/{id}";
     public static final String CONFIRM = "/confirm/{confirmationToken}";

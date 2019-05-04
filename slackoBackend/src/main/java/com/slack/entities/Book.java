@@ -1,11 +1,13 @@
 package com.slack.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -57,4 +59,17 @@ public class Book implements Serializable {
             joinColumns = @JoinColumn(name = "book_details_id"),
             inverseJoinColumns = @JoinColumn(name = "category_id"))
     private List<BookCategory> categories;
+
+    @Transient
+    private Boolean isVotedByUser;
+
+    @JsonIgnore
+    @ManyToMany(cascade = {
+            CascadeType.MERGE,
+            CascadeType.PERSIST},
+            fetch = FetchType.LAZY)
+    @JoinTable(name = "users_voting",
+            joinColumns = @JoinColumn(name = "book_id"),
+            inverseJoinColumns = @JoinColumn(name = "user_id"))
+    private List<User> votedUsers;
 }

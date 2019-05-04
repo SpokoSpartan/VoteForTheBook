@@ -4,6 +4,7 @@ import com.slack.DTOs.BookDTO;
 import com.slack.entities.Author;
 import com.slack.entities.Book;
 import com.slack.entities.BookCategory;
+import com.slack.entities.User;
 import com.slack.exceptions.EntityNotFoundException;
 import com.slack.repositories.AuthorRepository;
 import com.slack.repositories.BookCategoryRepository;
@@ -25,6 +26,7 @@ public class BookService {
     private final BookRepository bookRepository;
     private final BookCategoryRepository bookCategoryRepository;
     private final AuthorRepository authorRepository;
+    private final UserService userService;
 
     public List<BookDTO> getBooksByIsbn(String isbn) {
         List<BookDTO> books = new ArrayList();
@@ -41,7 +43,16 @@ public class BookService {
     }
 
     public List<Book> getAllBooks() {
-        return bookRepository.findAll();
+        User user = userService.getLoggedInUser();
+        List<Book> books = bookRepository.findAll();
+        for(Book book: books){
+            if(book.getVotedUsers().contains(user)) {
+                book.setIsVotedByUser(true);
+            } else {
+                book.setIsVotedByUser(false);
+            }
+        }
+        return books;
     }
 
     public Book createBook(BookDTO bookDTO) {
