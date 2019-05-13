@@ -2,6 +2,11 @@ import {Component, HostListener, OnInit} from '@angular/core';
 import {BookService} from '../../../services/book-service/book.service';
 import {Book} from '../../../models/Book';
 import {delay} from 'rxjs/operators';
+import {HttpErrorResponse} from '@angular/common/http';
+import {Router} from '@angular/router';
+import {SnackbarService} from 'ngx-snackbar';
+import {Voting} from '../../../models/Voting';
+import {interval, Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-present-book',
@@ -17,12 +22,22 @@ export class PresentBookComponent implements OnInit {
   margin: any;
   target: any;
   bookTitle: any = [];
+  voting: Voting;
+  timeToNextVoting: number;
+  roundNumber: number;
+  isVotingActive: boolean;
+  subscription: Subscription;
+  timeToPresentBooks = false;
 
-  constructor(private bookService: BookService) {
+  constructor(private bookService: BookService,
+              private router: Router,
+              private snackbarService: SnackbarService) {
   }
 
+  source = interval(1000);
+
   async ngOnInit() {
-    await this.getAllBooks().then( () => {
+    await this.getVoting().then( () => {
       this.sleep().then(() => this.setBookSize());
     });
   }
@@ -59,7 +74,7 @@ export class PresentBookComponent implements OnInit {
       this.bookHeight = this.bookWidth * 1.28;
       this.margin = 160;
     }
-    this.cutTitle(this.bookWidth / 9);
+    this.cutTitle(this.bookWidth / 10);
     this.resizeImages();
   }
 
@@ -88,13 +103,65 @@ export class PresentBookComponent implements OnInit {
   }
 
   async getAllBooks() {
+    const response: any = await this.bookService.getAllBook().catch((error: HttpErrorResponse) => {
+      if (error.status === 401 || error.status === 403) {
+        this.router.navigateByUrl('login');
+      } else {
+        this.addSnackbar(error.error.message, 4000, 'red');
+      }
+    });
+    this.books = response;
+    this.configureLastBook();
+  }
+
+  async getVoting() {
+    this.timeToPresentBooks = false;
     this.books = [];
-    try {
-      const response: any = await this.bookService.getAllBook();
-      this.books = response;
-      this.configureLastBook();
-    } catch (e) {
-      console.log(e);
+    const response: any = await this.bookService.getActualVoting().catch((error: HttpErrorResponse) => {
+      if (error.status === 401 || error.status === 403) {
+        this.router.navigateByUrl('login');
+      } else {
+        this.addSnackbar(error.error.message, 4000, 'red');
+      }
+    });
+    this.voting = response;
+
+
+    console.log(this.voting);
+
+    if (this.voting != null && this.voting.isActive) {
+      if (this.voting.thirdRound.consideredBooks.length > 0) {
+        this.books = this.voting.thirdRound.consideredBooks;
+        this.roundNumber = 3;
+      } else if (this.voting.secondRound.consideredBooks.length > 0) {
+        this.books = this.voting.secondRound.consideredBooks;
+        this.roundNumber = 2;
+      } else {
+        this.books = this.voting.firstRound.consideredBooks;
+        this.roundNumber = 1;
+      }
+      console.log(this.books);
+      this.timeToNextVoting = this.voting.timeToNextVotingInSec;
+      this.bookService.setVotingStatus(true);
+      if (this.subscription == null) {
+        this.subscription = this.source.subscribe(() => this.setTimeToNextVoting());
+      }
+      await this.configureLastBook().then(() => this.isVotingActive = true);
+    } else {
+      if (this.subscription != null) {
+        this.subscription.unsubscribe();
+      }
+      this.bookService.setVotingStatus(false);
+      await this.getAllBooks();
+      await this.configureLastBook().then(() => this.isVotingActive = false);
+    }
+  }
+
+  setTimeToNextVoting() {
+    if (this.timeToNextVoting <= 0) {
+      this.getVoting();
+    } else {
+      this.timeToNextVoting = this.timeToNextVoting - 1;
     }
   }
 
@@ -112,41 +179,64 @@ export class PresentBookComponent implements OnInit {
   }
 
   async voteForBook(id: number) {
-    try {
-      await this.bookService.voteForBook(id).subscribe((response) => {
-        const myBooks: Book[] = response;
-        this.books = [];
-        this.books = myBooks;
-        this.configureLastBook();
-      });
-    } catch (e) {
-      console.log('jestem');
-      console.log(e.error.message);
-    }
+    await this.bookService.voteForBook(id).subscribe((response) => {
+      const myBooks: Book[] = response;
+      this.books = [];
+      this.books = myBooks;
+      this.configureLastBook();
+    }, (error: HttpErrorResponse) => {
+      if (error.status === 401 || error.status === 403) {
+        this.router.navigateByUrl('login');
+      } else {
+        this.addSnackbar(error.error.message, 4000, 'red');
+      }
+    });
   }
 
   async cancelVoteForBook(id: number) {
-    try {
-      await this.bookService.cancelVoteForBook(id).subscribe((response) => {
-        const myBooks: Book[] = response;
-        this.books = [];
-        this.books = myBooks;
-        this.configureLastBook();
-      });
-    } catch (e) {
-      console.log(e);
-    }
+    await this.bookService.cancelVoteForBook(id).subscribe((response) => {
+      const myBooks: Book[] = response;
+      this.books = [];
+      this.books = myBooks;
+      this.configureLastBook();
+    }, (error: HttpErrorResponse) => {
+      if (error.status === 401 || error.status === 403) {
+        this.router.navigateByUrl('login');
+      } else {
+        this.addSnackbar(error.error.message, 4000, 'red');
+      }
+    });
   }
 
   initSize() {
     this.setBookSize();
   }
 
-  configureLastBook() {
+  async configureLastBook() {
     if (this.books != null && this.books.length > 0) {
       const book: Book = Object.assign({}, this.books[this.books.length - 1]);
       book.id = null;
+      book.title = '';
       this.books.push(book);
+      this.timeToPresentBooks = true;
     }
+  }
+
+  addSnackbar(message: string, time: number, col: string) {
+    this.snackbarService.add({
+      msg: message.bold(),
+      timeout: time,
+      action: {
+        text: 'OK',
+        onClick: (snack) => {
+          this.snackbarService.clear();
+        }
+      },
+      color: col,
+      background: 'Silver'
+    });
+  }
+  clearSnackbar() {
+    this.snackbarService.clear();
   }
 }

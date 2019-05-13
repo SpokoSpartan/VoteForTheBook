@@ -2,7 +2,7 @@ package com.slack.utils;
 
 public class Constans {
 
-    public static final Integer MAX_COUNT_OF_FIRST_VOTING = 4;
+    public static final Integer MAX_COUNT_OF_FIRST_VOTING = 6;
 
     public static final String REST_AUTOCOMPLETION_CLIENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 " +
             "(KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36";

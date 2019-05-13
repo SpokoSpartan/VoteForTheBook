@@ -2,23 +2,30 @@
   <div class="row">
     <div class="col-md-1 order-md-1"></div>
     <div class="col-md-10 order-md-2">
-      <div class="py-5 text-center">
+      <div class="py-5 text-center" *ngIf="isVotingActive">
         <h2>Vote for books</h2>
         <p class="lead">The form below allows you to vote for 3 books you like.
           Three of the most popular books will be available in the next voting.
           If you want to see more information about the book, click on the picture.</p>
       </div>
+      <div class="py-5 text-center" *ngIf="!isVotingActive">
+        <h2>Look for books</h2>
+        <p class="lead">
+          The form below allows you to check which books users can vote for.</p>
+      </div>
     </div>
     <div class="col-md-1 order-md-3"></div>
   </div>
+  <div class="py-5 text-center" *ngIf="isVotingActive">
+    <h3 style="text-align: right; margin-top: -70px; margin-bottom: -70px;">ROUND: {{roundNumber}}, TIME: {{timeToNextVoting}}s</h3>
+  </div>
 </div>
-<div class="album">
+<div class="album" *ngIf="timeToPresentBooks">
   <div class="row" id="row-for-books">
     <div *ngFor="let book of books">
       <div class="col-md-4 col-lg-4 col-sm-4 col-xl-4" *ngIf="book.id !== null">
         <div class="card mb-4 box-shadow" id="card{{book.id}}">
           <div class="col-12">
-            <h6>{{bookTitle[book.id - 1]}}</h6>
             <img class="card-img-top align-items-center" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail"
                  style="display: block;" *ngIf="!(book.coverPictureUrl == null || book.coverPictureUrl == '')"
                  [src]="book.coverPictureUrl" id="picture{{book.id}}" alt="picture{{book.id}}">
@@ -28,7 +35,8 @@
                  src="https://img.icons8.com/dusk/64/000000/bookmark.png">
           </div>
           <div class="card-body">
-            <div class="d-flex justify-content-between align-items-center">
+            <h6>{{bookTitle[book.id - 1]}}</h6>
+            <div class="d-flex justify-content-between align-items-center" *ngIf="isVotingActive">
               <div class="btn-group" *ngIf="book.isVotedByUser === false">
                 <button type="button" class="btn btn-outline-primary" (click)="voteForBook(book.id)">Vote</button>
               </div>
@@ -56,4 +64,5 @@
     <hr>
     <p>© App Footer 2018-2019</p>
   </footer>
+  <ngx-snackbar [position]="'bottom-center'" [max]="1"></ngx-snackbar>
 </div>

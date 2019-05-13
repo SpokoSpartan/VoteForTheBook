@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {LoginService} from '../../../services/login-service/login.service';
+import {BookService} from '../../../services/book-service/book.service';
 
 @Component({
   selector: 'app-navbar',
@@ -10,11 +11,13 @@ import {LoginService} from '../../../services/login-service/login.service';
 export class NavbarComponent implements OnInit {
 
   constructor(private router: Router,
-              private loginService: LoginService) { }
+              private loginService: LoginService,
+              private bookService: BookService) { }
 
   isLoggedIn = false;
   username = 'Not logged in';
   role = '';
+  isVotingActive = true;
 
   ngOnInit() {
     this.loginService.getIsLoggedOk().subscribe(isLoggedIn => {
@@ -26,6 +29,17 @@ export class NavbarComponent implements OnInit {
     this.loginService.getUsername().subscribe(username => {
       this.username = username;
     });
+    this.bookService.getIsVotingActive().subscribe(isVotingActive => {
+      this.isVotingActive = isVotingActive;
+    });
+  }
+
+  startVoteButtonClicked() {
+    this.router.navigateByUrl('new-voting');
+  }
+
+  getLastWinner() {
+    this.router.navigateByUrl('winner');
   }
 
   signUpButtonClicked() {

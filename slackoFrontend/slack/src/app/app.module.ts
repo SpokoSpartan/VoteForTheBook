@@ -25,6 +25,8 @@ import {ImageService} from './services/image-service/image.service';
 import {CookieService} from 'ngx-cookie-service';
 import { PresentBookComponent } from './components/book-component/present-book/present-book.component';
 import {SnackbarModule} from 'ngx-snackbar';
+import { WinnerComponent } from './components/book-component/winner/winner/winner.component';
+import { NewVotingComponent } from './components/book-component/new-voting/new-voting.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import {SnackbarModule} from 'ngx-snackbar';
     RegistrationComponent,
     ConfirmationComponent,
     PresentBookComponent,
-    DateFormatPipe
+    DateFormatPipe,
+    WinnerComponent,
+    NewVotingComponent
   ],
   imports: [
     BrowserModule,

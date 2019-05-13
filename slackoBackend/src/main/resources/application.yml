@@ -13,3 +13,6 @@ spring:
           auth: true
           starttls.enable: true
     debug: true
+  jackson:
+    serialization:
+      FAIL_ON_EMPTY_BEANS: false
