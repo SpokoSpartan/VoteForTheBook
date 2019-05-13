@@ -31,6 +31,10 @@ export class BookService {
     return await this.http.get<BookDTO>(this.URL + '/book/get-by-isbn/' + isbn, {withCredentials: true}).toPromise();
   }
 
+  async getOneBook(bookId: string) {
+    return await this.http.get<Book>(this.URL + '/book/getOne/' + bookId, {withCredentials: true}).toPromise();
+  }
+
   async getAllBook() {
     return await this.http.get<Book>(this.URL + '/book/getAll/books', {withCredentials: true}).toPromise();
   }

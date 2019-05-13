@@ -1,3 +1,89 @@
-<p>
-  book works!
-</p>
+<div class="container" *ngIf="isBookLoaded">
+  <div class="row">
+    <div class="col-md-1 order-md-1">
+    </div>
+    <div class="col-md-10 order-md-2">
+      <div class="py-5 text-center" *ngIf="!isWinnerPresented">
+        <h2>More info</h2>
+        <p class="lead">The form below allows read more about about book.
+          If you created it, you can delete it.</p>
+      </div>
+      <div class="py-5 text-center" *ngIf="isWinnerPresented">
+        <h2>Winner</h2>
+        <p class="lead">
+          The book you will read for the next time. Have fun reading.</p>
+      </div>
+    </div>
+    <div class="col-md-1 order-md-3"></div>
+  </div>
+  <div class="row">
+    <div class="col-md-3 order-md-1">
+      <button class="btn btn-outline-primary" style="margin-bottom: 20px; margin-top: -10px;"
+              (click)="backToBooksButtonClicked()">Back to books</button>
+    </div>
+    <div class="col-md-9 order-md-2">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-7 order-md-1">
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th scope="col">Title:</th>
+          <td scope="row">{{book.title}}</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <th scope="col">ISBN: </th>
+          <td scope="row">{{book.isbn}}</td>
+        </tr>
+        <tr>
+          <th scope="col">Publication date: </th>
+          <td scope="row">{{book.publicationDate | date: 'dd-MM-yyyy'}}</td>
+        </tr>
+        <tr>
+          <th scope="col">Categories: </th>
+          <td scope="row">
+            <div *ngFor="let category of book.categories">
+              {{category.bookCategoryName}}
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th scope="col">Authors: </th>
+          <td scope="row">
+            <div *ngFor="let author of book.authors">
+              {{author.authorFullName}}
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th scope="col">Description: </th>
+          <td scope="row">
+            <div *ngIf="book.description !== null">
+              {{book.description}}
+            </div>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-md-5 order-md-2">
+      <div *ngIf="book.coverPictureUrl !== null">
+        <img src="{{book.coverPictureUrl}}"style="width: 80%; margin-left: 10%;">
+      </div>
+      <div *ngIf="book.coverPictureUrl === null">
+        <img src="https://img.icons8.com/dusk/64/000000/bookmark.png" style="width: 80%; margin-left: 10%; max-height: 60%;">
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <br>
+    <br>
+    <hr>
+    <p>© App Footer 2018-2019</p>
+  </footer>
+  <ngx-snackbar [position]="'bottom-center'" [max]="1"></ngx-snackbar>
+</div>

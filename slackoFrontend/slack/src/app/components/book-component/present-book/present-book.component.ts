@@ -126,9 +126,6 @@ export class PresentBookComponent implements OnInit {
     });
     this.voting = response;
 
-
-    console.log(this.voting);
-
     if (this.voting != null && this.voting.isActive) {
       if (this.voting.thirdRound.consideredBooks.length > 0) {
         this.books = this.voting.thirdRound.consideredBooks;
@@ -140,7 +137,6 @@ export class PresentBookComponent implements OnInit {
         this.books = this.voting.firstRound.consideredBooks;
         this.roundNumber = 1;
       }
-      console.log(this.books);
       this.timeToNextVoting = this.voting.timeToNextVotingInSec;
       this.bookService.setVotingStatus(true);
       if (this.subscription == null) {
@@ -220,6 +216,10 @@ export class PresentBookComponent implements OnInit {
       this.books.push(book);
       this.timeToPresentBooks = true;
     }
+  }
+
+  bookImageClicked(bookId: any) {
+    this.router.navigateByUrl('book/' + bookId);
   }
 
   addSnackbar(message: string, time: number, col: string) {

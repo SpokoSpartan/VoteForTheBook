@@ -55,6 +55,10 @@ public class BookService {
         return books;
     }
 
+    public Book getOneBook(Long bookId) {
+        return bookRepository.findById(bookId).orElseThrow(() -> new EntityNotFoundException("book"));
+    }
+
     public Book createBook(BookDTO bookDTO) {
         Book book = new Book();
         book = castBookDtoToBook(bookDTO, book);

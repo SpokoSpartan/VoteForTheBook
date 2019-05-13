@@ -11,7 +11,7 @@ import {NewVotingComponent} from './components/book-component/new-voting/new-vot
 
 export const routes: Routes = [
   {path: '', redirectTo: 'create-book', pathMatch: 'full'},
-  {path: 'books-management', component: BookComponent},
+  {path: 'book/:bookId', component: BookComponent},
   {path: 'create-book', component: CreateBookComponent},
   {path: 'login', component: LoginComponent},
   {path: 'registration', component: RegistrationComponent},

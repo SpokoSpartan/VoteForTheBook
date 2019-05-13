@@ -28,10 +28,10 @@
           <div class="col-12">
             <img class="card-img-top align-items-center" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail"
                  style="display: block;" *ngIf="!(book.coverPictureUrl == null || book.coverPictureUrl == '')"
-                 [src]="book.coverPictureUrl" id="picture{{book.id}}" alt="picture{{book.id}}">
+                 [src]="book.coverPictureUrl" id="picture{{book.id}}" alt="picture{{book.id}}" (click)="bookImageClicked(book.id)">
             <img class="card-img-top align-items-center" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail"
                  style="display: block;" *ngIf="book.coverPictureUrl == null || book.coverPictureUrl == ''"
-                 id="defaultPicture{{book.id}}" alt="defaultPicture{{book.id}}"
+                 id="defaultPicture{{book.id}}" alt="defaultPicture{{book.id}}" (click)="bookImageClicked(book.id)"
                  src="https://img.icons8.com/dusk/64/000000/bookmark.png">
           </div>
           <div class="card-body">

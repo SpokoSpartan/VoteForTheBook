@@ -31,6 +31,11 @@ public class BookController {
         return bookService.getAllBooks();
     }
 
+    @GetMapping(GET_ONE)
+    public Book getOneBook(@PathVariable Long id) {
+        return bookService.getOneBook(id);
+    }
+
     @PostMapping(CREATE)
     public Book createBook(@RequestBody @Valid BookDTO bookDTO, BindingResult bindingResult) {
         DTOValidator.validate(bindingResult);
