@@ -12,14 +12,14 @@
       <IntrospectionStateNumber>2072</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
-      <Relations>sequence|table|18297|18299|1
+      <Relations>sequence|table|18355|18357|1
+sequence|table|18363|18365|1
+sequence|table|18377|18379|1
+sequence|table|18297|18299|1
 sequence|table|18305|18307|1
 sequence|table|18316|18318|1
 sequence|table|18324|18326|1
 sequence|table|18341|18343|1
-sequence|table|18355|18357|1
-sequence|table|18363|18365|1
-sequence|table|18377|18379|1
 </Relations>
     </database>
     <role id="3" parent="1" name="pg_execute_server_program">

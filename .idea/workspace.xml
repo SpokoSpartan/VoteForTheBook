@@ -5,16 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="24b22906-4175-4593-aa92-984f58bbb108" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/slackoBackend/src/main/java/com/slack/controllers/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/slackoBackend/src/main/java/com/slack/controllers/BookController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/slackoBackend/src/main/java/com/slack/services/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/slackoBackend/src/main/java/com/slack/services/BookService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/slackoFrontend/slack/src/app/components/book-component/book/book.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/slackoFrontend/slack/src/app/components/book-component/book/book.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/slackoFrontend/slack/src/app/components/book-component/book/book.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/slackoFrontend/slack/src/app/components/book-component/book/book.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/slackoFrontend/slack/src/app/components/book-component/present-book/present-book.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/slackoFrontend/slack/src/app/components/book-component/present-book/present-book.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/slackoFrontend/slack/src/app/components/book-component/present-book/present-book.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/slackoFrontend/slack/src/app/components/book-component/present-book/present-book.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/slackoFrontend/slack/src/app/components/book-component/winner/winner/winner.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/slackoFrontend/slack/src/app/components/book-component/winner/winner/winner.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/slackoFrontend/slack/src/app/components/book-component/winner/winner/winner.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/slackoFrontend/slack/src/app/components/book-component/winner/winner/winner.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/slackoFrontend/slack/src/app/rootes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/slackoFrontend/slack/src/app/rootes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/slackoFrontend/slack/src/app/services/book-service/book.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/slackoFrontend/slack/src/app/services/book-service/book.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5dfa2f33-5507-4b1e-94ea-1c10fa79f63c/storage_v2/_src_/database/dd8681ba7bphab.mtL4gA/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/5dfa2f33-5507-4b1e-94ea-1c10fa79f63c/storage_v2/_src_/database/dd8681ba7bphab.mtL4gA/schema/public.abK9xQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f2303d75-a7f6-473a-974c-3562e39c044b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/f2303d75-a7f6-473a-974c-3562e39c044b.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/slackoBackend/src/main/java/com/slack/services/VoteServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/slackoBackend/src/main/java/com/slack/services/VoteServices.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/slackoBackend/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -99,8 +94,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/slackoFrontend/slack/src/app/components/book-component/present-book/present-book.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="219">
-              <caret line="127" lean-forward="true" selection-start-line="127" selection-end-line="127" />
+            <state relative-caret-position="105">
+              <caret line="127" selection-start-line="127" selection-end-line="127" />
               <folding>
                 <element signature="e#0#62#0" expanded="true" />
               </folding>
@@ -108,14 +103,32 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/slackoBackend/src/main/java/com/slack/services/VoteServices.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-285">
+              <caret line="20" column="14" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/slackoBackend/src/main/resources/application-production.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="29" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/slackoFrontend/slack/src/app/components/book-component/book/book.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="44" lean-forward="true" selection-start-line="17" selection-start-column="44" selection-end-line="17" selection-end-column="44" />
-              <folding>
-                <element signature="e#0#50#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="210">
+              <caret line="17" column="44" selection-start-line="17" selection-start-column="44" selection-end-line="17" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -123,8 +136,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/slackoFrontend/slack/src/app/components/book-component/winner/winner/winner.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="11" lean-forward="true" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="11" />
+            <state relative-caret-position="315">
+              <caret line="23" column="11" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="11" />
               <folding>
                 <element signature="e#0#50#0" expanded="true" />
               </folding>
@@ -136,20 +149,18 @@
         <entry file="file://$PROJECT_DIR$/slackoFrontend/slack/src/app/components/book-component/winner/winner/winner.component.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="45">
-              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+              <caret line="3" selection-start-line="3" selection-end-line="3" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/slackoFrontend/slack/src/app/components/book-component/book/book.component.html">
           <provider selected="true" editor-type-id="text-editor">
             <state>
               <caret column="42" selection-start-column="42" selection-end-column="42" />
               <folding>
                 <element signature="n#style#0;n#button#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#div#1;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -167,8 +178,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/slackoFrontend/slack/src/app/rootes.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="10" lean-forward="true" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="23" />
+            <state relative-caret-position="150">
+              <caret line="18" column="10" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="23" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -223,7 +234,6 @@
         <option value="$PROJECT_DIR$/slackoFrontend/slack/src/app/components/navbar-component/navbar/navbar.component.html" />
         <option value="$PROJECT_DIR$/slackoFrontend/slack/src/app/components/book-component/new-voting/new-voting.component.html" />
         <option value="$PROJECT_DIR$/slackoFrontend/slack/src/app/components/book-component/new-voting/new-voting.component.ts" />
-        <option value="$PROJECT_DIR$/slackoBackend/src/main/java/com/slack/services/VoteServices.java" />
         <option value="$PROJECT_DIR$/slackoFrontend/slack/src/app/rootes.ts" />
         <option value="$PROJECT_DIR$/slackoBackend/src/main/java/com/slack/services/BookService.java" />
         <option value="$PROJECT_DIR$/slackoBackend/src/main/java/com/slack/controllers/BookController.java" />
@@ -234,6 +244,7 @@
         <option value="$PROJECT_DIR$/slackoFrontend/slack/src/app/components/book-component/present-book/present-book.component.ts" />
         <option value="$PROJECT_DIR$/slackoFrontend/slack/src/app/components/book-component/book/book.component.ts" />
         <option value="$PROJECT_DIR$/slackoFrontend/slack/src/app/components/book-component/book/book.component.html" />
+        <option value="$PROJECT_DIR$/slackoBackend/src/main/java/com/slack/services/VoteServices.java" />
       </list>
     </option>
   </component>
@@ -276,6 +287,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -287,116 +299,60 @@
             <path>
               <item name="SpokoSlack" type="b2602c69:ProjectViewProjectNode" />
               <item name="SpokoSlack" type="462c0819:PsiDirectoryNode" />
-              <item name="slackoFrontend" type="462c0819:PsiDirectoryNode" />
+              <item name="slackoBackend" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SpokoSlack" type="b2602c69:ProjectViewProjectNode" />
               <item name="SpokoSlack" type="462c0819:PsiDirectoryNode" />
-              <item name="slackoFrontend" type="462c0819:PsiDirectoryNode" />
-              <item name="slack" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SpokoSlack" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SpokoSlack" type="462c0819:PsiDirectoryNode" />
-              <item name="slackoFrontend" type="462c0819:PsiDirectoryNode" />
-              <item name="slack" type="462c0819:PsiDirectoryNode" />
+              <item name="slackoBackend" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SpokoSlack" type="b2602c69:ProjectViewProjectNode" />
               <item name="SpokoSlack" type="462c0819:PsiDirectoryNode" />
-              <item name="slackoFrontend" type="462c0819:PsiDirectoryNode" />
-              <item name="slack" type="462c0819:PsiDirectoryNode" />
+              <item name="slackoBackend" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SpokoSlack" type="b2602c69:ProjectViewProjectNode" />
               <item name="SpokoSlack" type="462c0819:PsiDirectoryNode" />
-              <item name="slackoFrontend" type="462c0819:PsiDirectoryNode" />
-              <item name="slack" type="462c0819:PsiDirectoryNode" />
+              <item name="slackoBackend" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SpokoSlack" type="b2602c69:ProjectViewProjectNode" />
               <item name="SpokoSlack" type="462c0819:PsiDirectoryNode" />
-              <item name="slackoFrontend" type="462c0819:PsiDirectoryNode" />
-              <item name="slack" type="462c0819:PsiDirectoryNode" />
+              <item name="slackoBackend" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="book-component" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="slack" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SpokoSlack" type="b2602c69:ProjectViewProjectNode" />
               <item name="SpokoSlack" type="462c0819:PsiDirectoryNode" />
-              <item name="slackoFrontend" type="462c0819:PsiDirectoryNode" />
-              <item name="slack" type="462c0819:PsiDirectoryNode" />
+              <item name="slackoBackend" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="book-component" type="462c0819:PsiDirectoryNode" />
-              <item name="winner" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SpokoSlack" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SpokoSlack" type="462c0819:PsiDirectoryNode" />
-              <item name="slackoFrontend" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="slack" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="book-component" type="462c0819:PsiDirectoryNode" />
-              <item name="winner" type="462c0819:PsiDirectoryNode" />
-              <item name="winner" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SpokoSlack" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SpokoSlack" type="462c0819:PsiDirectoryNode" />
-              <item name="slackoFrontend" type="462c0819:PsiDirectoryNode" />
-              <item name="slack" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="navbar-component" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SpokoSlack" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SpokoSlack" type="462c0819:PsiDirectoryNode" />
-              <item name="slackoFrontend" type="462c0819:PsiDirectoryNode" />
-              <item name="slack" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="navbar-component" type="462c0819:PsiDirectoryNode" />
-              <item name="navbar" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SpokoSlack" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SpokoSlack" type="462c0819:PsiDirectoryNode" />
-              <item name="slackoFrontend" type="462c0819:PsiDirectoryNode" />
-              <item name="slack" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="services" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SpokoSlack" type="b2602c69:ProjectViewProjectNode" />
               <item name="SpokoSlack" type="462c0819:PsiDirectoryNode" />
-              <item name="slackoFrontend" type="462c0819:PsiDirectoryNode" />
-              <item name="slack" type="462c0819:PsiDirectoryNode" />
+              <item name="slackoBackend" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-              <item name="book-service" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -435,7 +391,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.SpokoSlack">
+  <component name="RunManager" selected="npm.start">
     <configuration name="SpokoSlack" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="slack" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.slack.SlackApplication" />
@@ -493,16 +449,16 @@
       <workItem from="1557409670546" duration="5519000" />
       <workItem from="1557644640709" duration="32565000" />
       <workItem from="1557761816037" duration="67000" />
-      <workItem from="1557777152943" duration="10772000" />
+      <workItem from="1557777152943" duration="12151000" />
+      <workItem from="1557813949438" duration="244000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="107573000" />
+    <option name="totallyTimeSpent" value="109196000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1366" y="-1" width="1920" height="1080" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="1" />
@@ -511,16 +467,16 @@
       <window_info id="UI Designer" order="4" />
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info id="Web" order="6" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="7" visible="true" weight="0.27001068" />
+      <window_info content_ui="combo" id="Project" order="7" visible="true" weight="0.27321237" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3294979" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3294979" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39853558" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Spring" order="7" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.18514644" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.18514644" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.3294702" />
@@ -535,7 +491,7 @@
       <window_info anchor="right" id="Maven" order="3" weight="0.32954547" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="right" id="Database" order="6" weight="0.26093918" />
+      <window_info anchor="right" id="Database" order="6" visible="true" weight="0.26093918" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
       <window_info anchor="right" id="Bean Validation" order="9" weight="0.32954547" />
@@ -754,16 +710,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/slackoBackend/src/main/java/com/slack/services/VoteServices.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="846">
-          <caret line="178" column="90" selection-start-line="178" selection-start-column="90" selection-end-line="178" selection-end-column="90" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="das://f2303d75-a7f6-473a-974c-3562e39c044b/database/postgres/schema/public/table/book" />
     <entry file="file://$PROJECT_DIR$/slackoBackend/src/main/java/com/slack/controllers/BookController.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -806,46 +752,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/slackoFrontend/slack/src/app/components/navbar-component/navbar/navbar.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="42" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/slackoFrontend/slack/src/app/rootes.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="10" lean-forward="true" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/slackoFrontend/slack/src/app/components/book-component/present-book/present-book.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="17" column="8" lean-forward="true" selection-start-line="1" selection-start-column="2" selection-end-line="17" selection-end-column="8" />
           <folding>
             <element signature="n#style#0;n#h3#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/slackoFrontend/slack/src/app/components/book-component/winner/winner/winner.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/slackoFrontend/slack/src/app/components/book-component/winner/winner/winner.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="11" lean-forward="true" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="11" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -857,23 +769,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/slackoFrontend/slack/src/app/components/book-component/present-book/present-book.component.ts">
+    <entry file="file://$PROJECT_DIR$/slackoFrontend/slack/src/app/components/book-component/book/book.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="127" lean-forward="true" selection-start-line="127" selection-end-line="127" />
+        <state relative-caret-position="210">
+          <caret line="17" column="44" selection-start-line="17" selection-start-column="44" selection-end-line="17" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/slackoFrontend/slack/src/app/components/book-component/winner/winner/winner.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="23" column="11" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="11" />
           <folding>
-            <element signature="e#0#62#0" expanded="true" />
+            <element signature="e#0#50#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/slackoFrontend/slack/src/app/components/book-component/book/book.component.ts">
+    <entry file="file://$PROJECT_DIR$/slackoFrontend/slack/src/app/components/book-component/winner/winner/winner.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="44" lean-forward="true" selection-start-line="17" selection-start-column="44" selection-end-line="17" selection-end-column="44" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="45">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
         </state>
       </provider>
     </entry>
@@ -885,6 +801,50 @@
             <element signature="n#style#0;n#button#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#div#1;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/slackoFrontend/slack/src/app/components/navbar-component/navbar/navbar.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="42" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/slackoFrontend/slack/src/app/rootes.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="18" column="10" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/slackoBackend/src/main/resources/application-production.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="29" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/slackoFrontend/slack/src/app/components/book-component/present-book/present-book.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="127" selection-start-line="127" selection-end-line="127" />
+          <folding>
+            <element signature="e#0#62#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/slackoBackend/src/main/java/com/slack/services/VoteServices.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-285">
+          <caret line="20" column="14" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

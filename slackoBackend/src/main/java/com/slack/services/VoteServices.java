@@ -18,6 +18,7 @@ import java.util.*;
 
 @RequiredArgsConstructor
 @Service
+@Transactional
 public class VoteServices {
 
     private final UserService userService;
