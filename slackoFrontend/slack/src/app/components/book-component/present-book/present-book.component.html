@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" *ngIf="isLoggedIn">
   <div class="row">
     <div class="col-md-1 order-md-1"></div>
     <div class="col-md-10 order-md-2">
@@ -8,7 +8,7 @@
           Three of the most popular books will be available in the next voting.
           If you want to see more information about the book, click on the picture.</p>
       </div>
-      <div class="py-5 text-center" *ngIf="!isVotingActive">
+      <div class="py-5 text-center" *ngIf="!isVotingActive" style="margin-left: -20px;">
         <h2>Look for books</h2>
         <p class="lead">
           The form below allows you to check which books users can vote for.</p>
@@ -57,12 +57,12 @@
     </div>
   </div>
 </div>
-<div class="container">
+<div class="container" *ngIf="isLoggedIn">
   <footer>
     <br>
     <br>
     <hr>
-    <p>© App Footer 2018-2019</p>
+    <p>© VoteForBookApp 2018-2019</p>
   </footer>
   <ngx-snackbar [position]="'bottom-center'" [max]="1"></ngx-snackbar>
 </div>

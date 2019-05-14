@@ -8,6 +8,7 @@ import com.monitorjbl.json.JsonViewSerializer;
 import com.monitorjbl.json.Match;
 import com.slack.DTOs.Email;
 import com.slack.DTOs.UserDTO;
+import com.slack.DTOs.UserPrincipal;
 import com.slack.entities.User;
 import com.slack.exceptions.BadCredentialsException;
 import com.slack.exceptions.SomethingBadHappenException;
@@ -17,6 +18,7 @@ import org.apache.commons.codec.digest.DigestUtils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -104,5 +106,15 @@ public class UserService implements UserDetailsService {
             throw new SomethingBadHappenException();
         }
         return user;
+    }
+
+    public UserPrincipal getUserPrincipal() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if (!(authentication instanceof AnonymousAuthenticationToken)) {
+            String currentUserName = authentication.getName();
+            String currentUserRole = ((GrantedAuthority)authentication.getAuthorities().toArray()[0]).getAuthority();
+            return new UserPrincipal(currentUserName, currentUserRole);
+        }
+        return null;
     }
 }

@@ -7,6 +7,7 @@ import {Router} from '@angular/router';
 import {SnackbarService} from 'ngx-snackbar';
 import {Voting} from '../../../models/Voting';
 import {interval, Subscription} from 'rxjs';
+import {LoginService} from '../../../services/login-service/login.service';
 
 @Component({
   selector: 'app-present-book',
@@ -28,18 +29,26 @@ export class PresentBookComponent implements OnInit {
   isVotingActive: boolean;
   subscription: Subscription;
   timeToPresentBooks = false;
+  source = interval(1000);
+  isLoggedIn = false;
 
   constructor(private bookService: BookService,
               private router: Router,
-              private snackbarService: SnackbarService) {
+              private snackbarService: SnackbarService,
+              private loginService: LoginService) {
   }
 
-  source = interval(1000);
-
   async ngOnInit() {
-    await this.getVoting().then( () => {
-      this.sleep().then(() => this.setBookSize());
+    this.loginService.getIsLoggedOk().subscribe(isLoggedIn => {
+      this.isLoggedIn = isLoggedIn;
     });
+    if (this.isLoggedIn) {
+      await this.getVoting().then( () => {
+        this.sleep().then(() => this.setBookSize());
+      });
+    } else {
+      this.router.navigateByUrl('login');
+    }
   }
 
   async sleep() {
@@ -65,15 +74,28 @@ export class PresentBookComponent implements OnInit {
       this.bookWidth = (this.innerWidth - 420) / 3;
       this.bookHeight = this.bookWidth * 1.28;
       this.margin = 100;
+      const booksCount = this.books.length;
+      if (booksCount < 4) {
+        this.margin = (this.innerWidth - ((this.bookWidth + 79) * (booksCount - 1))) / 2 ;
+      }
     } else if (this.innerWidth < 1600) {
       this.bookWidth = (this.innerWidth - 488) / 4;
       this.bookHeight = this.bookWidth * 1.28;
       this.margin = 108;
+      const booksCount = this.books.length;
+      if (booksCount < 5) {
+        this.margin = (this.innerWidth - ((this.bookWidth + 75) * (booksCount - 1))) / 2 ;
+      }
     } else {
       this.bookWidth = (this.innerWidth - 656) / 5;
       this.bookHeight = this.bookWidth * 1.28;
       this.margin = 160;
+      const booksCount = this.books.length;
+      if (booksCount < 6) {
+        this.margin = (this.innerWidth - ((this.bookWidth + 75) * (booksCount - 1))) / 2 ;
+      }
     }
+
     this.cutTitle(this.bookWidth / 10);
     this.resizeImages();
   }
@@ -155,7 +177,13 @@ export class PresentBookComponent implements OnInit {
 
   setTimeToNextVoting() {
     if (this.timeToNextVoting <= 0) {
-      this.getVoting();
+      this.getVoting().catch((error: HttpErrorResponse) => {
+        if (error.status === 401 || error.status === 403) {
+          this.router.navigateByUrl('login');
+        } else {
+          this.addSnackbar(error.error.message, 4000, 'red');
+        }
+      });
     } else {
       this.timeToNextVoting = this.timeToNextVoting - 1;
     }

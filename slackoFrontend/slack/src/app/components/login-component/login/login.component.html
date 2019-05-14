@@ -1,16 +1,9 @@
 <div class="container">
   <div class="row">
     <div class="col-md-4 order-md-1"></div>
-    <div class="col-md-4 order-md-2">
+    <div class="col-md-4 order-md-2" style="margin-top: 5%;">
       <br>
       <form class="form-signin" (ngSubmit)="loginButtonClicked(loginParams)" [formGroup]="loginParams">
-        <div class="row">
-          <div class="col-md-4 order-md-1 col-sm-4 order-sm-1 col-xs-4 order-xs-1"></div>
-            <div class="col-md-4 order-md-2 col-sm-4 order-sm-2 col-xs-4 order-xs-2">
-              <img width="72" height="72" class="mb-4" alt="" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg">
-            </div>
-          <div class="col-md-4 order-md-3 col-sm-4 order-sm-3 col-xs-4 order-xs-3"></div>
-        </div>
         <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
         <div *ngIf="!isLoggedOk" class="alert alert-danger" role="alert">
           Bad credentials!
@@ -23,14 +16,9 @@
         <input [ngClass]="!isLoggedOk ? 'is-invalid' : ''"
                class="form-control" id="inputPassword" required="" type="password"
                placeholder="Password" formControlName="password">
-        <div class="checkbox mb-3">
-          <label>
-            <input type="checkbox" value="remember-me"> Remember me
-          </label>
-        </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit" [disabled]="!loginParams.valid">Sign in</button>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" [disabled]="!loginParams.valid" style="margin-top: 8%;">Sign in</button>
         <div class="text-center">
-          <p class="mt-5 mb-3 text-muted">© Company Name 2018-2019</p>
+          <p class="mt-5 mb-3 text-muted">© VoteForBookApp 2018-2019</p>
         </div>
       </form>
     </div>

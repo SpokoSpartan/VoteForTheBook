@@ -1,4 +1,4 @@
-<div class="container" *ngIf="isBookLoaded">
+<div class="container" *ngIf="isBookLoaded && isLoggedIn">
   <div class="row">
     <div class="col-md-1 order-md-1">
     </div>
@@ -26,7 +26,7 @@
   </div>
   <div class="row">
     <div class="col-md-7 order-md-1">
-      <table class="table table-striped">
+      <table class="table table-striped table-responsive">
         <thead>
         <tr>
           <th scope="col">Title:</th>
@@ -83,7 +83,7 @@
     <br>
     <br>
     <hr>
-    <p>© App Footer 2018-2019</p>
+    <p>© VoteForBookApp 2018-2019</p>
   </footer>
   <ngx-snackbar [position]="'bottom-center'" [max]="1"></ngx-snackbar>
 </div>

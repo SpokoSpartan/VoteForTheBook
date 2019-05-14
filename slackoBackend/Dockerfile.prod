@@ -1,4 +1,5 @@
 FROM openjdk:8-jre-alpine
+CMD install -d -m 0777 /images/study/books/
 COPY ./target/slack-0.0.1-SNAPSHOT.jar /usr/source/be.jar
 WORKDIR /usr/source/
 CMD java -Dspring.profiles.active=production -Dserver.port=$PORT -Xms256m -Xmx256m -Xss512k -jar be.jar

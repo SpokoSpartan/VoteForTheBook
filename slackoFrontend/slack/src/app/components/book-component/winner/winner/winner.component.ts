@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Book} from '../../../../models/Book';
 import {BookService} from '../../../../services/book-service/book.service';
+import {LoginService} from '../../../../services/login-service/login.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-winner',
@@ -10,11 +12,21 @@ import {BookService} from '../../../../services/book-service/book.service';
 export class WinnerComponent implements OnInit {
 
   book: Book = null;
+  isLoggedIn = false;
 
-  constructor(private bookService: BookService) { }
+  constructor(private bookService: BookService,
+              private loginService: LoginService,
+              private router: Router) { }
 
   ngOnInit() {
-    this.getWinner();
+    this.loginService.getIsLoggedOk().subscribe(isLoggedIn => {
+      this.isLoggedIn = isLoggedIn;
+    });
+    if (this.isLoggedIn) {
+      this.getWinner();
+    } else {
+      this.router.navigateByUrl('login');
+    }
   }
 
   async getWinner() {

@@ -14,10 +14,10 @@ export class NavbarComponent implements OnInit {
               private loginService: LoginService,
               private bookService: BookService) { }
 
-  isLoggedIn = false;
   username = 'Not logged in';
   role = '';
   isVotingActive = true;
+  isLoggedIn = false;
 
   ngOnInit() {
     this.loginService.getIsLoggedOk().subscribe(isLoggedIn => {

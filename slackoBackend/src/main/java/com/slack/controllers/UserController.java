@@ -3,6 +3,7 @@ package com.slack.controllers;
 import static com.slack.utils.Mapping.*;
 
 import com.slack.DTOs.UserDTO;
+import com.slack.DTOs.UserPrincipal;
 import com.slack.services.UserService;
 import com.slack.validators.DTOValidator;
 import lombok.RequiredArgsConstructor;
@@ -24,6 +25,11 @@ public class UserController {
 
     @Value("${fe_url}")
     private String feUrl;
+
+    @GetMapping(GET_ONE)
+    public UserPrincipal getPrincipal() {
+        return userService.getUserPrincipal();
+    }
 
     @GetMapping(GET_ALL)
     public ResponseEntity findAllByFirstPartOfNick(@PathVariable String name) {

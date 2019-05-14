@@ -3,7 +3,7 @@ import {API_URL} from '../../config';
 import {HttpClient, HttpErrorResponse, HttpParams} from '@angular/common/http';
 import {BehaviorSubject} from 'rxjs';
 import {Router} from '@angular/router';
-import {CookieService} from 'ngx-cookie-service';
+import {UserPrincipal} from '../../models/DTOs/UserPrincipal';
 
 @Injectable({
   providedIn: 'root'
@@ -13,11 +13,8 @@ export class LoginService {
   URL = API_URL;
 
   constructor(private http: HttpClient,
-              private router: Router,
-              private cookieService: CookieService) {
-    this.loggedIn.next(false);
-    this.getUserCredential();
-    this.isLoggedInCorrectly();
+              private router: Router) {
+    this.getUserCredential().then(() => this.isLoggedInCorrectly());
   }
 
   private loggedIn: BehaviorSubject<any> = new BehaviorSubject([]);
@@ -35,9 +32,7 @@ export class LoginService {
     return this.username.asObservable();
   }
   isLoggedInCorrectly() {
-    if (this.role.getValue() === '[ROLE_USER]') {
-      this.loggedIn.next(true);
-    }
+    return this.loggedIn.getValue();
   }
 
   async loginUser(username: string, password: string) {
@@ -50,21 +45,21 @@ export class LoginService {
     });
     if (isStatusOk === true) {
       this.loggedIn.next(true);
-    } else {
-      this.cookieService.delete('dX-Nlcl-JvbG-Vz');
     }
     this.getUserCredential();
     return isStatusOk;
   }
 
-  getUserCredential() {
-    const principal: string[] = atob(this.cookieService.get('dX-Nlcl-JvbG-Vz')).split(';');
-    if (principal[0] != null && principal[1] != null) {
-      this.role.next(principal[1]);
-      this.username.next('Logged as: ' + principal[0]);
+  async getUserCredential() {
+    const principal = await this.http.get<UserPrincipal>(this.URL + '/api/v1/user/getOne/0', {withCredentials: true}).toPromise();
+    if (principal != null) {
+      this.role.next(principal.role);
+      this.username.next('Logged as: ' + principal.username);
+      this.loggedIn.next(true);
     } else {
       this.role.next('null');
       this.username.next('Not logged in');
+      this.loggedIn.next(false);
     }
   }
 
@@ -75,7 +70,8 @@ export class LoginService {
     });
     if (isStatusOk === true) {
       this.loggedIn.next(false);
-      this.cookieService.delete('dX-Nlcl-JvbG-Vz');
+      this.role.next('null');
+      this.username.next('Not logged in');
       this.router.navigateByUrl('login');
     }
     this.getUserCredential();

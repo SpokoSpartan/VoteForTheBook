@@ -13,6 +13,8 @@ import {DatePipe} from '@angular/common';
 import {SnackbarService} from 'ngx-snackbar';
 import {Book} from '../../../models/Book';
 import {Router} from '@angular/router';
+import {LoginService} from '../../../services/login-service/login.service';
+import {HttpErrorResponse} from "@angular/common/http";
 
 @Pipe({
   name: 'dateFormat'
@@ -37,7 +39,8 @@ export class CreateBookComponent implements OnInit {
               private imageService: ImageService,
               private dateFormatPipe: DateFormatPipe,
               private snackbarService: SnackbarService,
-              private router: Router) { }
+              private router: Router,
+              private loginService: LoginService) { }
 
   authors: Chips[] = [];
   authorsDB: Author[] = [];
@@ -47,10 +50,18 @@ export class CreateBookComponent implements OnInit {
   URL = API_URL + '/api/v1/image';
   actualDate = this.dateFormatPipe.transform(new Date());
   waitingForResponse = false;
+  isLoggedIn = false;
 
   ngOnInit() {
-    this.initFormGroup();
-    this.initParameters();
+    this.loginService.getIsLoggedOk().subscribe(isLoggedIn => {
+      this.isLoggedIn = isLoggedIn;
+    });
+    if (this.isLoggedIn) {
+      this.initFormGroup();
+      this.initParameters();
+    } else {
+      this.router.navigateByUrl('login');
+    }
   }
 
   initFormGroup() {
@@ -128,7 +139,13 @@ export class CreateBookComponent implements OnInit {
     this.addSnackbar('Please wait ', 10000, 'green');
     this.waitingForResponse = true;
     const bookIsbn = this.createBookParams.value.isbn;
-    const response: any = await this.bookService.getBooksDTOByIsbn(bookIsbn);
+    const response: any = await this.bookService.getBooksDTOByIsbn(bookIsbn).catch((error: HttpErrorResponse) => {
+      if (error.status === 401 || error.status === 403) {
+        this.router.navigateByUrl('login');
+      } else {
+        this.addSnackbar(error.error.message, 4000, 'red');
+      }
+    });
     const booksDTO: BookDTO[] = response;
     if (booksDTO != null && booksDTO.length > 0) {
       let authorsOnBeggining: Chips[] = [];
@@ -171,6 +188,7 @@ export class CreateBookComponent implements OnInit {
         this.createBookParams.patchValue({coverPictureUrl: url});
       });
     } catch (e) {
+      this.addSnackbar('Image uploading failed. Please try again.', 3000, 'black');
     }
   }
 
