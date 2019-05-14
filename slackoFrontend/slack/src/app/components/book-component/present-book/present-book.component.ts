@@ -23,7 +23,6 @@ export class PresentBookComponent implements OnInit {
   bookHeight: any;
   margin: any;
   target: any;
-  bookTitle: any = [];
   voting: Voting;
   timeToNextVoting: number;
   roundNumber: number;
@@ -252,7 +251,7 @@ export class PresentBookComponent implements OnInit {
       book.title = 'title';
       this.books.push(book);
       this.timeToPresentBooks = true;
-      this.cdref.detectChanges();
+      //this.cdref.detectChanges();
     }
   }
 

@@ -33,7 +33,13 @@ export class WinnerComponent implements OnInit {
     const response = await this.bookService.getActualVoting();
     if (response.winner !== null) {
       this.book = response.winner;
-      sessionStorage.setItem('winner_id', this.book.id.toString());
+      if (this.book !== null) {
+        sessionStorage.setItem('winner_id', this.book.id.toString());
+      } else {
+        sessionStorage.setItem('winner_id', '0');
+      }
+    } else {
+      sessionStorage.setItem('winner_id', '0');
     }
   }
 }

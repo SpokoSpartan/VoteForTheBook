@@ -1,14 +1,20 @@
-<div class="container" *ngIf="isBookLoaded && isLoggedIn">
+<div class="container" *ngIf="isLoggedIn">
   <div class="row">
     <div class="col-md-1 order-md-1">
     </div>
     <div class="col-md-10 order-md-2">
-      <div class="py-5 text-center" *ngIf="!isWinnerPresented">
+      <div class="py-5 text-center" *ngIf="isWinnerPresented && isVotingAtThisMoment">
+        <h2>Voting is active</h2>
+        <p class="lead">At this moment, voting is active.
+          After its completion, the winner will be presented here.</p>
+        <img src="https://img.icons8.com/color/100/000000/boring.png" style="width: 15%;">
+      </div>
+      <div class="py-5 text-center" *ngIf="!isWinnerPresented && !isVotingAtThisMoment">
         <h2>More info</h2>
         <p class="lead">The form below allows read more about about book.
           If you created it, you can delete it.</p>
       </div>
-      <div class="py-5 text-center" *ngIf="isWinnerPresented">
+      <div class="py-5 text-center" *ngIf="isWinnerPresented && !isVotingAtThisMoment">
         <h2>Winner</h2>
         <p class="lead">
           The book you will read for the next time. Have fun reading.</p>
@@ -16,7 +22,7 @@
     </div>
     <div class="col-md-1 order-md-3"></div>
   </div>
-  <div class="row">
+  <div class="row" *ngIf="!isVotingAtThisMoment">
     <div class="col-md-3 order-md-1">
       <button class="btn btn-outline-primary" style="margin-bottom: 20px; margin-top: -10px;"
               (click)="backToBooksButtonClicked()">Back to books</button>
@@ -24,7 +30,7 @@
     <div class="col-md-9 order-md-2">
     </div>
   </div>
-  <div class="row">
+  <div class="row" *ngIf="isBookLoaded && !isVotingAtThisMoment">
     <div class="col-md-7 order-md-1">
       <table class="table table-striped">
         <thead>
@@ -81,7 +87,7 @@
     </div>
   </div>
 
-  <footer>
+  <footer *ngIf="isBookLoaded && !isVotingAtThisMoment">
     <br>
     <br>
     <hr>

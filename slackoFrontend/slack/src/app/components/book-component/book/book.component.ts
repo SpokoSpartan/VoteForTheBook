@@ -19,6 +19,7 @@ export class BookComponent implements OnInit {
   isLoggedIn = false;
   presentMoreInfo = false;
   buttonText = 'more info';
+  isVotingAtThisMoment = false;
 
   constructor(private bookService: BookService,
               private route: ActivatedRoute,
@@ -43,11 +44,16 @@ export class BookComponent implements OnInit {
   }
 
   async initBooks() {
-    const response: any = await this.bookService.getOneBook(this.bookId).catch((error: HttpErrorResponse) => {
-      if (error.status === 401 || error.status === 403) {
-        this.router.navigateByUrl('login');
-      }});
-    this.book = response;
+    if (this.bookId === '0') {
+      this.isVotingAtThisMoment = true;
+    } else {
+      this.isVotingAtThisMoment = false;
+      const response: any = await this.bookService.getOneBook(this.bookId).catch((error: HttpErrorResponse) => {
+        if (error.status === 401 || error.status === 403) {
+          this.router.navigateByUrl('login');
+        }});
+      this.book = response;
+    }
   }
 
   backToBooksButtonClicked() {
