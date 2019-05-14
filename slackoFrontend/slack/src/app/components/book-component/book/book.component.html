@@ -26,7 +26,7 @@
   </div>
   <div class="row">
     <div class="col-md-7 order-md-1">
-      <table class="table table-striped table-responsive">
+      <table class="table table-striped">
         <thead>
         <tr>
           <th scope="col">Title:</th>
@@ -62,8 +62,10 @@
           <th scope="col">Description: </th>
           <td scope="row">
             <div *ngIf="book.description !== null">
-              {{book.description}}
+              {{cutDescription(book.description)}}
             </div>
+            <button *ngIf="book.description !== null && isMoreButtonActive(book.description)" style="color: cornflowerblue;"
+            (click)="moreInfoButtonClicked()">{{buttonText}}</button>
           </td>
         </tr>
         </tbody>

@@ -1,4 +1,4 @@
-import {Component, HostListener, OnInit} from '@angular/core';
+import {ChangeDetectorRef, Component, HostListener, OnInit} from '@angular/core';
 import {BookService} from '../../../services/book-service/book.service';
 import {Book} from '../../../models/Book';
 import {delay} from 'rxjs/operators';
@@ -17,6 +17,7 @@ import {LoginService} from '../../../services/login-service/login.service';
 export class PresentBookComponent implements OnInit {
 
   books: Book[];
+  pointerToCotTitle = 1;
   innerWidth: any;
   bookWidth: any;
   bookHeight: any;
@@ -35,7 +36,8 @@ export class PresentBookComponent implements OnInit {
   constructor(private bookService: BookService,
               private router: Router,
               private snackbarService: SnackbarService,
-              private loginService: LoginService) {
+              private loginService: LoginService,
+              private cdref: ChangeDetectorRef) {
   }
 
   async ngOnInit() {
@@ -95,8 +97,7 @@ export class PresentBookComponent implements OnInit {
         this.margin = (this.innerWidth - ((this.bookWidth + 75) * (booksCount - 1))) / 2 ;
       }
     }
-
-    this.cutTitle(this.bookWidth / 10);
+    this.pointerToCotTitle = this.bookWidth / 10;
     this.resizeImages();
   }
 
@@ -133,11 +134,11 @@ export class PresentBookComponent implements OnInit {
       }
     });
     this.books = response;
+    this.sortBooks();
     this.configureLastBook();
   }
 
   async getVoting() {
-    this.timeToPresentBooks = false;
     this.books = [];
     const response: any = await this.bookService.getActualVoting().catch((error: HttpErrorResponse) => {
       if (error.status === 401 || error.status === 403) {
@@ -147,16 +148,18 @@ export class PresentBookComponent implements OnInit {
       }
     });
     this.voting = response;
-
     if (this.voting != null && this.voting.isActive) {
       if (this.voting.thirdRound.consideredBooks.length > 0) {
         this.books = this.voting.thirdRound.consideredBooks;
+        this.sortBooks();
         this.roundNumber = 3;
       } else if (this.voting.secondRound.consideredBooks.length > 0) {
         this.books = this.voting.secondRound.consideredBooks;
+        this.sortBooks();
         this.roundNumber = 2;
       } else {
         this.books = this.voting.firstRound.consideredBooks;
+        this.sortBooks();
         this.roundNumber = 1;
       }
       this.timeToNextVoting = this.voting.timeToNextVotingInSec;
@@ -175,8 +178,21 @@ export class PresentBookComponent implements OnInit {
     }
   }
 
+  sortBooks() {
+    this.books.sort((book1, book2) => {
+      if (book1.id > book2.id) {
+        return 1;
+      } else if (book1.id < book2.id) {
+        return -1;
+      } else {
+        return 0;
+      }
+    });
+  }
+
   setTimeToNextVoting() {
     if (this.timeToNextVoting <= 0) {
+      this.timeToPresentBooks = false;
       this.getVoting().catch((error: HttpErrorResponse) => {
         if (error.status === 401 || error.status === 403) {
           this.router.navigateByUrl('login');
@@ -189,16 +205,11 @@ export class PresentBookComponent implements OnInit {
     }
   }
 
-  cutTitle(length: number) {
-    this.bookTitle = [];
-    if (this.books != null && this.books.length > 0) {
-      this.books.forEach(book => {
-        if (book.title.length > length) {
-          this.bookTitle.push(book.title.substring(0, length) + '...');
-        } else {
-          this.bookTitle.push(book.title);
-        }
-      });
+  cutTitle(title: string): string {
+    if (title.length > this.pointerToCotTitle) {
+      return title.substring(0, this.pointerToCotTitle) + '...';
+    } else {
+      return title;
     }
   }
 
@@ -219,9 +230,7 @@ export class PresentBookComponent implements OnInit {
 
   async cancelVoteForBook(id: number) {
     await this.bookService.cancelVoteForBook(id).subscribe((response) => {
-      const myBooks: Book[] = response;
-      this.books = [];
-      this.books = myBooks;
+      this.books = response;
       this.configureLastBook();
     }, (error: HttpErrorResponse) => {
       if (error.status === 401 || error.status === 403) {
@@ -237,12 +246,13 @@ export class PresentBookComponent implements OnInit {
   }
 
   async configureLastBook() {
-    if (this.books != null && this.books.length > 0) {
+    if (this.books != null && this.books.length > 0 && this.books[this.books.length - 1].id !== null) {
       const book: Book = Object.assign({}, this.books[this.books.length - 1]);
       book.id = null;
-      book.title = '';
+      book.title = 'title';
       this.books.push(book);
       this.timeToPresentBooks = true;
+      this.cdref.detectChanges();
     }
   }
 

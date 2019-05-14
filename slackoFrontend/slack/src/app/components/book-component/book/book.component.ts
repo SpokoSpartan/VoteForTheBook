@@ -17,6 +17,8 @@ export class BookComponent implements OnInit {
   isBookLoaded = false;
   book: Book;
   isLoggedIn = false;
+  presentMoreInfo = false;
+  buttonText = 'more info';
 
   constructor(private bookService: BookService,
               private route: ActivatedRoute,
@@ -50,5 +52,30 @@ export class BookComponent implements OnInit {
 
   backToBooksButtonClicked() {
     this.router.navigateByUrl('present-books');
+  }
+
+  cutDescription(description: string): string {
+    if (description.length > 420 && !this.presentMoreInfo) {
+      return description.substring(0, 420) + '...';
+    } else {
+      return description;
+    }
+  }
+
+  isMoreButtonActive(description: string): boolean {
+    if (description.length > 420) {
+      return true;
+    }
+    return false;
+  }
+
+  moreInfoButtonClicked() {
+    if (this.presentMoreInfo === false) {
+      this.presentMoreInfo = true;
+      this.buttonText = 'less info';
+    } else {
+      this.presentMoreInfo = false;
+      this.buttonText = 'more info';
+    }
   }
 }

@@ -35,7 +35,7 @@
                  src="https://img.icons8.com/dusk/64/000000/bookmark.png">
           </div>
           <div class="card-body">
-            <h6>{{bookTitle[book.id - 1]}}</h6>
+            <h6>{{cutTitle(book.title)}}</h6>
             <div class="d-flex justify-content-between align-items-center" *ngIf="isVotingActive">
               <div class="btn-group" *ngIf="book.isVotedByUser === false">
                 <button type="button" class="btn btn-outline-primary" (click)="voteForBook(book.id)">Vote</button>
