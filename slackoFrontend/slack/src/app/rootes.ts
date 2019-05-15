@@ -19,4 +19,4 @@ export const routes: Routes = [
   {path: 'present-books', component: PresentBookComponent},
   {path: 'winner', component: WinnerComponent},
   {path: 'new-voting', component: NewVotingComponent}
-]
+];
