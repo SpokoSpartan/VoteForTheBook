@@ -14,7 +14,8 @@ import {SnackbarService} from 'ngx-snackbar';
 import {Book} from '../../../models/Book';
 import {Router} from '@angular/router';
 import {LoginService} from '../../../services/login-service/login.service';
-import {HttpErrorResponse} from "@angular/common/http";
+import {HttpErrorResponse} from '@angular/common/http';
+import {Observable} from "rxjs";
 
 @Pipe({
   name: 'dateFormat'
@@ -179,17 +180,17 @@ export class CreateBookComponent implements OnInit {
   }
 
   async uploadCoverPicture(imageInput: any) {
-    try {
-      const fileToUpload: File = imageInput.files[0];
-      const fd = new FormData();
-      fd.append('file', fileToUpload);
-      this.imageService.uploadImage(fd).subscribe( response => {
-        const url: string = this.URL + '/getOne/' + response.id + '.jpg';
+    const fileToUpload: File = imageInput.files[0];
+    const fd = new FormData();
+    fd.append('file', fileToUpload);
+    const response = await this.imageService.uploadImage(fd).toPromise().catch((e: HttpErrorResponse) => {
+      this.addSnackbar(e.error.message, 4000, 'red');
+    }).then(resp => {
+      if (resp != null) {
+        const url = resp.url;
         this.createBookParams.patchValue({coverPictureUrl: url});
-      });
-    } catch (e) {
-      this.addSnackbar('Image uploading failed. Please try again.', 3000, 'black');
-    }
+      }
+    });
   }
 
   addSnackbar(message: string, time: number, col: string) {

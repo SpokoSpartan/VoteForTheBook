@@ -22,7 +22,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     private final UserService userService;
     private final BCryptPasswordEncoder bCryptPasswordEncoder;
-    private final RestAuthenticationEntryPoint restAuthenticationEntryPoint;
 
     @Override
     public void configure(AuthenticationManagerBuilder auth) throws Exception {

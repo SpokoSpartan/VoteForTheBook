@@ -23,7 +23,6 @@ public class ImageController {
 
     @PostMapping(UPLOAD)
     public String handleFileUpload(@RequestParam("file") MultipartFile file) {
-        String id = imageService.createImage(file);
-        return "{ \"id\": " + id + "}";
+        return imageService.createImage(file);
     }
 }

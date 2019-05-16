@@ -22,14 +22,10 @@ export class ImageService {
   }
 
   uploadImage(item: FormData): Observable<any> {
-    return this.http.post<any>(this.URL + '/upload', item, { withCredentials: true })
-      .pipe(
-        catchError(this.handleError)
-      );
+    return this.http.post<any>(this.URL + '/upload', item, { withCredentials: true });
   }
 
   private handleError(error: HttpErrorResponse) {
-    console.log(error);
     return throwError(error);
   }
 }
