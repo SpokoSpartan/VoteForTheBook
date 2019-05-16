@@ -5,27 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="24b22906-4175-4593-aa92-984f58bbb108" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_cloudinary_cloudinary_core_1_14_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_cloudinary_cloudinary_http44_1_14_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_cloudinary_cloudinary_taglib_1_14_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_jsp_api_2_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_servlet_api_2_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_8_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpclient_4_5_7.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_4_11.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpmime_4_5_7.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5dfa2f33-5507-4b1e-94ea-1c10fa79f63c/storage_v2/_src_/database/dd8681ba7bphab.mtL4gA/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/5dfa2f33-5507-4b1e-94ea-1c10fa79f63c/storage_v2/_src_/database/dd8681ba7bphab.mtL4gA/schema/public.abK9xQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f2303d75-a7f6-473a-974c-3562e39c044b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/f2303d75-a7f6-473a-974c-3562e39c044b.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/slackoBackend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/slackoBackend/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/slackoBackend/src/main/java/com/slack/configuration/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/slackoBackend/src/main/java/com/slack/configuration/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/slackoBackend/src/main/java/com/slack/controllers/ImageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/slackoBackend/src/main/java/com/slack/controllers/ImageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/slackoBackend/src/main/java/com/slack/services/ImageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/slackoBackend/src/main/java/com/slack/services/ImageService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/slackoBackend/src/main/java/com/slack/utils/Constans.java" beforeDir="false" afterPath="$PROJECT_DIR$/slackoBackend/src/main/java/com/slack/utils/Constans.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/slackoBackend/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/slackoBackend/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/slackoFrontend/slack/src/app/components/book-component/create-book/create-book.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/slackoFrontend/slack/src/app/components/book-component/create-book/create-book.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/slackoFrontend/slack/src/app/services/image-service/image.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/slackoFrontend/slack/src/app/services/image-service/image.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/slackoFrontend/slack/src/app/components/book-component/present-book/present-book.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/slackoFrontend/slack/src/app/components/book-component/present-book/present-book.component.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/slackoBackend/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -162,10 +144,23 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/slackoFrontend/slack/src/app/components/book-component/create-book/create-book.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
-              <caret line="186" column="41" selection-start-line="186" selection-start-column="41" selection-end-line="186" selection-end-column="41" />
+            <state relative-caret-position="-908">
+              <caret line="50" column="57" lean-forward="true" selection-start-line="50" selection-start-column="57" selection-end-line="50" selection-end-column="57" />
               <folding>
                 <element signature="e#0#69#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/slackoFrontend/slack/src/app/components/book-component/present-book/present-book.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-188">
+              <caret line="22" column="46" lean-forward="true" selection-start-line="22" selection-start-column="46" selection-end-line="22" selection-end-column="46" />
+              <folding>
+                <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h3#0;n#div#1;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -188,15 +183,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-1011">
               <caret line="40" column="21" selection-start-line="40" selection-start-column="21" selection-end-line="40" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/slackoBackend/src/main/java/com/slack/utils/Constans.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="53" selection-start-line="5" selection-start-column="53" selection-end-line="5" selection-end-column="53" />
             </state>
           </provider>
         </entry>
@@ -225,7 +211,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/slackoBackend/src/main/java/com/slack/services/SchedulingService.java" />
         <option value="$PROJECT_DIR$/slackoBackend/src/main/java/com/slack/DTOs/VotingDTO.java" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/f2303d75-a7f6-473a-974c-3562e39c044b/console.sql" />
         <option value="$PROJECT_DIR$/slackoBackend/src/main/java/com/slack/repositories/VotingRepository.java" />
@@ -259,7 +244,6 @@
         <option value="$PROJECT_DIR$/slackoFrontend/slack/src/app/components/login-component/login/login.component.html" />
         <option value="$PROJECT_DIR$/slackoFrontend/slack/src/app/components/registration-component/registration/registration.component.html" />
         <option value="$PROJECT_DIR$/slackoBackend/src/main/resources/data.sql" />
-        <option value="$PROJECT_DIR$/slackoFrontend/slack/src/app/components/book-component/present-book/present-book.component.html" />
         <option value="$PROJECT_DIR$/slackoFrontend/slack/src/app/components/book-component/winner/winner/winner.component.html" />
         <option value="$PROJECT_DIR$/slackoFrontend/slack/src/app/components/book-component/book/book.component.html" />
         <option value="$PROJECT_DIR$/slackoFrontend/slack/src/app/components/book-component/winner/winner/winner.component.ts" />
@@ -275,7 +259,9 @@
         <option value="$PROJECT_DIR$/slackoBackend/src/main/java/com/slack/configuration/SecurityConfig.java" />
         <option value="$PROJECT_DIR$/slackoBackend/src/main/java/com/slack/services/ImageService.java" />
         <option value="$PROJECT_DIR$/slackoFrontend/slack/src/app/services/image-service/image.service.ts" />
+        <option value="$PROJECT_DIR$/slackoFrontend/slack/src/app/components/book-component/present-book/present-book.component.html" />
         <option value="$PROJECT_DIR$/slackoFrontend/slack/src/app/components/book-component/create-book/create-book.component.ts" />
+        <option value="$PROJECT_DIR$/slackoBackend/src/main/java/com/slack/configuration/PatchedSSLSocketFactory.java" />
       </list>
     </option>
   </component>
@@ -433,6 +419,36 @@
               <item name="slack" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SpokoSlack" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SpokoSlack" type="462c0819:PsiDirectoryNode" />
+              <item name="slackoFrontend" type="462c0819:PsiDirectoryNode" />
+              <item name="slack" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="book-component" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SpokoSlack" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SpokoSlack" type="462c0819:PsiDirectoryNode" />
+              <item name="slackoFrontend" type="462c0819:PsiDirectoryNode" />
+              <item name="slack" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="book-component" type="462c0819:PsiDirectoryNode" />
+              <item name="present-book" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SpokoSlack" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SpokoSlack" type="462c0819:PsiDirectoryNode" />
+              <item name="slackoFrontend" type="462c0819:PsiDirectoryNode" />
+              <item name="slack" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="services" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -550,12 +566,12 @@
       <workItem from="1557858141925" duration="1571000" />
       <workItem from="1557938109221" duration="261000" />
       <workItem from="1557956544761" duration="1456000" />
-      <workItem from="1557996518741" duration="4343000" />
+      <workItem from="1557996518741" duration="5068000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="143242000" />
+    <option name="totallyTimeSpent" value="143967000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -568,7 +584,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1366" y="-1" width="1920" height="1080" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="1" />
@@ -580,7 +595,7 @@
       <window_info content_ui="combo" id="Project" order="7" visible="true" weight="0.20330843" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32845187" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.5251046" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39853558" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -615,13 +630,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/slackoBackend/src/main/java/com/slack/controllers/VoteController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="37" lean-forward="true" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/slackoFrontend/slack/src/app/models/Voting.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -868,17 +876,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/slackoFrontend/slack/src/app/components/book-component/present-book/present-book.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="24" lean-forward="true" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h3#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/slackoFrontend/slack/src/app/components/book-component/book/book.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-60">
@@ -1019,10 +1016,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/slackoFrontend/slack/src/app/components/book-component/present-book/present-book.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-188">
+          <caret line="22" column="46" lean-forward="true" selection-start-line="22" selection-start-column="46" selection-end-line="22" selection-end-column="46" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h3#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/slackoBackend/src/main/java/com/slack/configuration/PatchedSSLSocketFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="28" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/slackoFrontend/slack/src/app/components/book-component/create-book/create-book.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="186" column="41" selection-start-line="186" selection-start-column="41" selection-end-line="186" selection-end-column="41" />
+        <state relative-caret-position="-908">
+          <caret line="50" column="57" lean-forward="true" selection-start-line="50" selection-start-column="57" selection-end-line="50" selection-end-column="57" />
           <folding>
             <element signature="e#0#69#0" expanded="true" />
           </folding>

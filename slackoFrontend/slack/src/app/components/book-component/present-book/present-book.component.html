@@ -17,7 +17,7 @@
     <div class="col-md-1 order-md-3"></div>
   </div>
   <div class="py-5 text-center" *ngIf="isVotingActive">
-    <h3 style="text-align: right; margin-top: -70px; margin-bottom: -70px;">ROUND: {{roundNumber}}, TIME: {{timeToNextVoting}}s</h3>
+    <h3 style="text-align: right; margin-top: -70px; margin-bottom: -70px;">ROUND: {{roundNumber}}, TIME: {{timeToNextVoting - 1}}s</h3>
   </div>
 </div>
 <div class="album" *ngIf="timeToPresentBooks">

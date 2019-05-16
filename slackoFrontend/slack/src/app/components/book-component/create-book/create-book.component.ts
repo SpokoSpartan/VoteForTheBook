@@ -15,7 +15,6 @@ import {Book} from '../../../models/Book';
 import {Router} from '@angular/router';
 import {LoginService} from '../../../services/login-service/login.service';
 import {HttpErrorResponse} from '@angular/common/http';
-import {Observable} from "rxjs";
 
 @Pipe({
   name: 'dateFormat'
