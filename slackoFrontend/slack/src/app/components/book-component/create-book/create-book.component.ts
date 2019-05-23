@@ -124,14 +124,15 @@ export class CreateBookComponent implements OnInit {
       this.createBookParams.value.description, this.createBookParams.value.coverPictureUrl,
       this.createBookParams.value.publicationDate, authors, categories);
     this.bookService.createBook(bookDto).subscribe((response) => {
-      const book: Book = response;
-      console.log(book);
-      if (book.id == null) {
-        this.addSnackbar('An error occur: open console', 4000, 'red');
-      } else {
-        this.addSnackbar('Book created successfully', 4000, 'green');
-        this.router.navigateByUrl('present-books');
-      }
+        const book: Book = response;
+        if (book.id == null) {
+          this.addSnackbar('Sorry, try again!', 4000, 'red');
+        } else {
+          this.addSnackbar('Book created successfully', 4000, 'green');
+          this.router.navigateByUrl('present-books');
+        }
+      }, (error: HttpErrorResponse) => {
+      this.addSnackbar(error.error.message, 4000, 'red');
     });
   }
 
