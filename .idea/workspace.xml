@@ -6,10 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="24b22906-4175-4593-aa92-984f58bbb108" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5dfa2f33-5507-4b1e-94ea-1c10fa79f63c/storage_v2/_src_/database/dd8681ba7bphab.mtL4gA/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/5dfa2f33-5507-4b1e-94ea-1c10fa79f63c/storage_v2/_src_/database/dd8681ba7bphab.mtL4gA/schema/public.abK9xQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f2303d75-a7f6-473a-974c-3562e39c044b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/f2303d75-a7f6-473a-974c-3562e39c044b.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/slackoFrontend/slack/src/app/components/book-component/create-book/create-book.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/slackoFrontend/slack/src/app/components/book-component/create-book/create-book.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/slackoFrontend/slack/src/app/components/book-component/present-book/present-book.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/slackoFrontend/slack/src/app/components/book-component/present-book/present-book.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/slackoFrontend/slack/src/app/components/book-component/new-voting/new-voting.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/slackoFrontend/slack/src/app/components/book-component/new-voting/new-voting.component.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/slackoBackend/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,64 +28,7 @@
     <option name="HIDDEN_KINDS">
       <set />
     </option>
-    <expand>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="dd8681ba7bphab@ec2-174-129-236-21.compute-1.amazonaws.com" type="feb32156:DbDataSourceImpl" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="dd8681ba7bphab@ec2-174-129-236-21.compute-1.amazonaws.com" type="feb32156:DbDataSourceImpl" />
-        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="dd8681ba7bphab@ec2-174-129-236-21.compute-1.amazonaws.com" type="feb32156:DbDataSourceImpl" />
-        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="dd8681ba7bphab: database" type="162271b6:PgImplModel$Database" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="dd8681ba7bphab@ec2-174-129-236-21.compute-1.amazonaws.com" type="feb32156:DbDataSourceImpl" />
-        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="dd8681ba7bphab: database" type="162271b6:PgImplModel$Database" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="dd8681ba7bphab@ec2-174-129-236-21.compute-1.amazonaws.com" type="feb32156:DbDataSourceImpl" />
-        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="dd8681ba7bphab: database" type="162271b6:PgImplModel$Database" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="public: schema" type="983ebcf7:PgImplModel$Schema" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="dd8681ba7bphab@ec2-174-129-236-21.compute-1.amazonaws.com" type="feb32156:DbDataSourceImpl" />
-        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="dd8681ba7bphab: database" type="162271b6:PgImplModel$Database" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="public: schema" type="983ebcf7:PgImplModel$Schema" />
-        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="dd8681ba7bphab@ec2-174-129-236-21.compute-1.amazonaws.com" type="feb32156:DbDataSourceImpl" />
-        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="dd8681ba7bphab: database" type="162271b6:PgImplModel$Database" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="public: schema" type="983ebcf7:PgImplModel$Schema" />
-        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="book: table" type="69fad909:PgImplModel$LocalTable" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="dd8681ba7bphab@ec2-174-129-236-21.compute-1.amazonaws.com" type="feb32156:DbDataSourceImpl" />
-        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="dd8681ba7bphab: database" type="162271b6:PgImplModel$Database" />
-        <item name="extensions" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-    </expand>
+    <expand />
     <select />
   </component>
   <component name="DefaultGradleProjectSettings">
@@ -107,12 +49,12 @@
     </expanded>
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/slackoFrontend/slack/src/app/components/book-component/create-book/create-book.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1154">
-              <caret line="123" column="74" lean-forward="true" selection-start-line="123" selection-start-column="74" selection-end-line="123" selection-end-column="74" />
+            <state relative-caret-position="1605">
+              <caret line="123" column="74" selection-start-line="123" selection-start-column="74" selection-end-line="123" selection-end-column="74" />
               <folding>
                 <element signature="e#0#69#0" expanded="true" />
               </folding>
@@ -134,10 +76,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/slackoFrontend/slack/src/app/components/book-component/present-book/present-book.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
+            <state relative-caret-position="330">
               <caret line="22" column="145" selection-start-line="22" selection-start-column="145" selection-end-line="22" selection-end-column="145" />
               <folding>
                 <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -149,9 +91,146 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="uml://DATABASE/5dfa2f33-5507-4b1e-94ea-1c10fa79f63c">
+          <provider selected="true" editor-type-id="UmlEditorProvider">
+            <state>
+              <ID>DATABASE</ID>
+              <OriginalElement>5dfa2f33-5507-4b1e-94ea-1c10fa79f63c</OriginalElement>
+              <nodes>
+                <node x="397.43750000000006" y="271.5">5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.book_details_categories</node>
+                <node x="905.9553571428571" y="271.5">5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.users_voting</node>
+                <node x="276.9642857142858" y="0.0">5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.book</node>
+                <node x="50.875" y="236.5">5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.voting</node>
+                <node x="1249.2142857142858" y="271.5">5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.group_admins</node>
+                <node x="1327.6875" y="46.0">5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.group</node>
+                <node x="1090.1875" y="11.5">5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.user</node>
+                <node x="1060.2142857142858" y="225.0">5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.message</node>
+                <node x="755.9642857142858" y="46.0">5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.author</node>
+                <node x="1387.2142857142858" y="271.5">5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.group_members</node>
+                <node x="225.83928571428578" y="271.5">5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.rounds_books</node>
+                <node x="511.9642857142858" y="46.0">5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.book_category</node>
+                <node x="713.7053571428571" y="271.5">5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.book_details_authors</node>
+                <node x="30.375" y="23.0">5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.round</node>
+              </nodes>
+              <notes />
+              <edges>
+                <edge source="5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.book_details_categories" target="5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.book_category">
+                  <point x="47.75" y="-36.0" />
+                  <point x="540.6875" y="205.0" />
+                  <point x="623.9642857142858" y="205.0" />
+                  <point x="0.0" y="36.5" />
+                </edge>
+                <edge source="5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.group_members" target="5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.user">
+                  <point x="-30.25" y="-36.0" />
+                  <point x="1417.4642857142858" y="195.0" />
+                  <point x="1279.1875" y="195.0" />
+                  <point x="81.0" y="71.0" />
+                </edge>
+                <edge source="5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.book_details_authors" target="5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.author">
+                  <point x="42.5" y="-36.0" />
+                  <point x="841.2053571428571" y="205.0" />
+                  <point x="861.4642857142858" y="205.0" />
+                  <point x="0.0" y="36.5" />
+                </edge>
+                <edge source="5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.voting" target="5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.book">
+                  <point x="55.5" y="-71.0" />
+                  <point x="180.375" y="205.0" />
+                  <point x="298.4642857142858" y="205.0" />
+                  <point x="-86.0" y="82.5" />
+                </edge>
+                <edge source="5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.book_details_categories" target="5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.book">
+                  <point x="-47.75" y="-36.0" />
+                  <point x="445.18750000000006" y="205.0" />
+                  <point x="384.4642857142858" y="205.0" />
+                  <point x="0.0" y="82.5" />
+                </edge>
+                <edge source="5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.voting" target="5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.round">
+                  <point x="18.5" y="-71.0" />
+                  <point x="143.375" y="205.0" />
+                  <point x="148.5" y="205.0" />
+                  <point x="23.625" y="59.5" />
+                </edge>
+                <edge source="5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.users_voting" target="5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.user">
+                  <point x="28.5" y="-36.0" />
+                  <point x="991.4553571428571" y="205.0" />
+                  <point x="1117.1875" y="205.0" />
+                  <point x="-81.0" y="71.0" />
+                </edge>
+                <edge source="5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.group_admins" target="5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.group">
+                  <point x="29.5" y="-36.0" />
+                  <point x="1337.7142857142858" y="205.0" />
+                  <point x="1362.6875" y="205.0" />
+                  <point x="-35.0" y="36.5" />
+                </edge>
+                <edge source="5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.users_voting" target="5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.book">
+                  <point x="-28.5" y="-36.0" />
+                  <point x="934.4553571428571" y="185.0" />
+                  <point x="470.4642857142858" y="185.0" />
+                  <point x="86.0" y="82.5" />
+                </edge>
+                <edge source="5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.book_details_authors" target="5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.book">
+                  <point x="-42.5" y="-36.0" />
+                  <point x="756.2053571428571" y="195.0" />
+                  <point x="427.4642857142858" y="195.0" />
+                  <point x="43.0" y="82.5" />
+                </edge>
+                <edge source="5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.rounds_books" target="5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.book">
+                  <point x="29.5" y="-36.0" />
+                  <point x="314.3392857142858" y="205.0" />
+                  <point x="341.4642857142858" y="205.0" />
+                  <point x="-43.0" y="82.5" />
+                </edge>
+                <edge source="5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.message" target="5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.user">
+                  <point x="0.0" y="-82.5" />
+                  <point x="1144.7142857142858" y="205.0" />
+                  <point x="1171.1875" y="205.0" />
+                  <point x="-27.0" y="71.0" />
+                </edge>
+                <edge source="5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.group_members" target="5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.group">
+                  <point x="30.25" y="-36.0" />
+                  <point x="1477.9642857142858" y="205.0" />
+                  <point x="1432.6875" y="205.0" />
+                  <point x="35.0" y="36.5" />
+                </edge>
+                <edge source="5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.group_admins" target="5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.user">
+                  <point x="-29.5" y="-36.0" />
+                  <point x="1278.7142857142858" y="205.0" />
+                  <point x="1225.1875" y="205.0" />
+                  <point x="27.0" y="71.0" />
+                </edge>
+                <edge source="5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.rounds_books" target="5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.round">
+                  <point x="-29.5" y="-36.0" />
+                  <point x="255.33928571428578" y="195.0" />
+                  <point x="195.75" y="195.0" />
+                  <point x="70.875" y="59.5" />
+                </edge>
+              </edges>
+              <settings layout="Hierarchic Group" zoom="1.0" x="240.0" y="240.0" />
+              <SelectedNodes />
+              <Categories>
+                <Category>Key columns</Category>
+                <Category>Columns</Category>
+              </Categories>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/slackoFrontend/slack/src/app/components/book-component/new-voting/new-voting.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="23" column="55" selection-start-line="23" selection-start-column="55" selection-end-line="23" selection-end-column="55" />
+              <folding>
+                <element signature="n#style#0;n#button#0;n#div#1;n#div#0;n#form#0;n#div#1;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/slackoFrontend/slack/src/app/services/book-service/book.service.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="113">
+            <state relative-caret-position="645">
               <caret line="50" column="89" selection-start-line="50" selection-start-column="89" selection-end-line="50" selection-end-column="89" />
             </state>
           </provider>
@@ -197,7 +276,6 @@
         <option value="$PROJECT_DIR$/slackoBackend/src/main/java/com/slack/controllers/UserController.java" />
         <option value="$PROJECT_DIR$/slackoFrontend/slack/src/app/models/DTOs/UserPrincipal.ts" />
         <option value="$PROJECT_DIR$/slackoFrontend/slack/src/app/components/navbar-component/navbar/navbar.component.ts" />
-        <option value="$PROJECT_DIR$/slackoFrontend/slack/src/app/components/book-component/new-voting/new-voting.component.html" />
         <option value="$PROJECT_DIR$/slackoFrontend/slack/src/app/components/login-component/login/login.component.ts" />
         <option value="$PROJECT_DIR$/slackoFrontend/slack/src/app/services/login-service/login.service.ts" />
         <option value="$PROJECT_DIR$/slackoFrontend/slack/src/app/components/book-component/new-voting/new-voting.component.ts" />
@@ -232,6 +310,7 @@
         <option value="$PROJECT_DIR$/slackoFrontend/slack/src/app/services/book-service/book.service.ts" />
         <option value="$PROJECT_DIR$/slackoFrontend/slack/src/app/components/book-component/create-book/create-book.component.ts" />
         <option value="$PROJECT_DIR$/slackoFrontend/slack/src/app/components/book-component/present-book/present-book.component.html" />
+        <option value="$PROJECT_DIR$/slackoFrontend/slack/src/app/components/book-component/new-voting/new-voting.component.html" />
       </list>
     </option>
   </component>
@@ -264,10 +343,9 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="170" />
-    <option name="y" value="91" />
-    <option name="width" value="1026" />
-    <option name="height" value="546" />
+    <option name="y" value="-1" />
+    <option name="width" value="1366" />
+    <option name="height" value="728" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -286,49 +364,6 @@
             <path>
               <item name="SpokoSlack" type="b2602c69:ProjectViewProjectNode" />
               <item name="SpokoSlack" type="462c0819:PsiDirectoryNode" />
-              <item name="slackoBackend" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SpokoSlack" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SpokoSlack" type="462c0819:PsiDirectoryNode" />
-              <item name="slackoBackend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SpokoSlack" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SpokoSlack" type="462c0819:PsiDirectoryNode" />
-              <item name="slackoBackend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SpokoSlack" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SpokoSlack" type="462c0819:PsiDirectoryNode" />
-              <item name="slackoBackend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SpokoSlack" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SpokoSlack" type="462c0819:PsiDirectoryNode" />
-              <item name="slackoBackend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="slack" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SpokoSlack" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SpokoSlack" type="462c0819:PsiDirectoryNode" />
-              <item name="slackoBackend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SpokoSlack" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SpokoSlack" type="462c0819:PsiDirectoryNode" />
               <item name="slackoFrontend" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -380,48 +415,7 @@
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="book-component" type="462c0819:PsiDirectoryNode" />
-              <item name="book" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SpokoSlack" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SpokoSlack" type="462c0819:PsiDirectoryNode" />
-              <item name="slackoFrontend" type="462c0819:PsiDirectoryNode" />
-              <item name="slack" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="book-component" type="462c0819:PsiDirectoryNode" />
-              <item name="create-book" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SpokoSlack" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SpokoSlack" type="462c0819:PsiDirectoryNode" />
-              <item name="slackoFrontend" type="462c0819:PsiDirectoryNode" />
-              <item name="slack" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="book-component" type="462c0819:PsiDirectoryNode" />
-              <item name="present-book" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SpokoSlack" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SpokoSlack" type="462c0819:PsiDirectoryNode" />
-              <item name="slackoFrontend" type="462c0819:PsiDirectoryNode" />
-              <item name="slack" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SpokoSlack" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SpokoSlack" type="462c0819:PsiDirectoryNode" />
-              <item name="slackoFrontend" type="462c0819:PsiDirectoryNode" />
-              <item name="slack" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-              <item name="book-service" type="462c0819:PsiDirectoryNode" />
+              <item name="new-voting" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -531,11 +525,15 @@
       <workItem from="1557996518741" duration="7467000" />
       <workItem from="1558024900511" duration="314000" />
       <workItem from="1558621536411" duration="2083000" />
+      <workItem from="1558717924386" duration="1204000" />
+      <workItem from="1558885468377" duration="1081000" />
+      <workItem from="1558950999770" duration="24000" />
+      <workItem from="1559408674015" duration="78000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="148763000" />
+    <option name="totallyTimeSpent" value="151150000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -548,7 +546,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-1" width="1366" height="728" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="1" />
@@ -557,10 +554,10 @@
       <window_info id="UI Designer" order="4" />
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info id="Web" order="6" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="7" visible="true" weight="0.25227273" />
+      <window_info active="true" content_ui="combo" id="Project" order="7" visible="true" weight="0.31666666" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.25827813" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.16841005" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39853558" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -581,11 +578,48 @@
       <window_info anchor="right" id="Maven" order="3" weight="0.32924226" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="right" id="Database" order="6" weight="0.25984848" />
+      <window_info anchor="right" id="Database" order="6" weight="0.18303095" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
       <window_info anchor="right" id="Bean Validation" order="9" weight="0.32954547" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="1" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Capture Tool" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info id="Web" order="6" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="7" visible="true" weight="0.12913553" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.16841005" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39853558" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3294979" />
+      <window_info anchor="bottom" id="Spring" order="7" weight="0.3294702" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.18377483" />
+      <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.3294702" />
+      <window_info anchor="bottom" id="Java Enterprise" order="12" />
+      <window_info anchor="bottom" id="Database Changes" order="13" />
+      <window_info anchor="bottom" id="Version Control" order="14" />
+      <window_info anchor="bottom" id="Database Console" order="15" weight="0.32845187" />
+      <window_info anchor="bottom" id="TypeScript" order="16" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.2497332" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Maven" order="3" weight="0.32924226" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="Capture Analysis" order="5" />
+      <window_info active="true" anchor="right" id="Database" order="6" visible="true" weight="0.18303095" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
+      <window_info anchor="right" id="Bean Validation" order="9" weight="0.32954547" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -595,16 +629,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/slackoFrontend/slack/src/app/components/navbar-component/navbar/navbar.component.spec.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#73#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://f2303d75-a7f6-473a-974c-3562e39c044b/database/postgres/schema/public/table/book" />
     <entry file="file://$PROJECT_DIR$/slackoBackend/src/main/java/com/slack/controllers/BookController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -776,16 +800,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/slackoFrontend/slack/src/app/components/book-component/new-voting/new-voting.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="40" selection-start-column="40" selection-end-column="40" />
-          <folding>
-            <element signature="n#style#0;n#button#0;n#div#1;n#div#0;n#form#0;n#div#1;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/slackoFrontend/slack/src/app/components/login-component/login/login.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -898,13 +912,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/slackoBackend/src/main/java/com/slack/configuration/PatchedSSLSocketFactory.java" />
-    <entry file="das://5dfa2f33-5507-4b1e-94ea-1c10fa79f63c/database/dd8681ba7bphab/schema/public/table/book_category">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="das://5dfa2f33-5507-4b1e-94ea-1c10fa79f63c/database/dd8681ba7bphab/schema/public/table/book_category" />
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/5dfa2f33-5507-4b1e-94ea-1c10fa79f63c/console.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -950,13 +958,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://5dfa2f33-5507-4b1e-94ea-1c10fa79f63c/database/dd8681ba7bphab/schema/public/table/book">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="das://5dfa2f33-5507-4b1e-94ea-1c10fa79f63c/database/dd8681ba7bphab/schema/public/table/book" />
     <entry file="file://$PROJECT_DIR$/slackoBackend/src/main/resources/application.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -964,17 +966,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/slackoFrontend/slack/src/app/services/book-service/book.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="50" column="89" selection-start-line="50" selection-start-column="89" selection-end-line="50" selection-end-column="89" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="das://5dfa2f33-5507-4b1e-94ea-1c10fa79f63c/database/dd8681ba7bphab/schema/public/table/message" />
     <entry file="file://$PROJECT_DIR$/slackoFrontend/slack/src/app/components/book-component/create-book/create-book.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1154">
-          <caret line="123" column="74" lean-forward="true" selection-start-line="123" selection-start-column="74" selection-end-line="123" selection-end-column="74" />
+        <state relative-caret-position="1605">
+          <caret line="123" column="74" selection-start-line="123" selection-start-column="74" selection-end-line="123" selection-end-column="74" />
           <folding>
             <element signature="e#0#69#0" expanded="true" />
           </folding>
@@ -995,12 +991,152 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/slackoFrontend/slack/src/app/components/book-component/present-book/present-book.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
+        <state relative-caret-position="330">
           <caret line="22" column="145" selection-start-line="22" selection-start-column="145" selection-end-line="22" selection-end-column="145" />
           <folding>
             <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#h3#0;n#div#1;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#h3#0;n#div#2;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/slackoFrontend/slack/src/app/services/book-service/book.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="645">
+          <caret line="50" column="89" selection-start-line="50" selection-start-column="89" selection-end-line="50" selection-end-column="89" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://DATABASE/5dfa2f33-5507-4b1e-94ea-1c10fa79f63c">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>DATABASE</ID>
+          <OriginalElement>5dfa2f33-5507-4b1e-94ea-1c10fa79f63c</OriginalElement>
+          <nodes>
+            <node x="397.43750000000006" y="271.5">5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.book_details_categories</node>
+            <node x="905.9553571428571" y="271.5">5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.users_voting</node>
+            <node x="276.9642857142858" y="0.0">5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.book</node>
+            <node x="50.875" y="236.5">5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.voting</node>
+            <node x="1249.2142857142858" y="271.5">5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.group_admins</node>
+            <node x="1327.6875" y="46.0">5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.group</node>
+            <node x="1090.1875" y="11.5">5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.user</node>
+            <node x="1060.2142857142858" y="225.0">5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.message</node>
+            <node x="755.9642857142858" y="46.0">5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.author</node>
+            <node x="1387.2142857142858" y="271.5">5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.group_members</node>
+            <node x="225.83928571428578" y="271.5">5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.rounds_books</node>
+            <node x="511.9642857142858" y="46.0">5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.book_category</node>
+            <node x="713.7053571428571" y="271.5">5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.book_details_authors</node>
+            <node x="30.375" y="23.0">5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.round</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.book_details_categories" target="5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.book_category">
+              <point x="47.75" y="-36.0" />
+              <point x="540.6875" y="205.0" />
+              <point x="623.9642857142858" y="205.0" />
+              <point x="0.0" y="36.5" />
+            </edge>
+            <edge source="5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.group_members" target="5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.user">
+              <point x="-30.25" y="-36.0" />
+              <point x="1417.4642857142858" y="195.0" />
+              <point x="1279.1875" y="195.0" />
+              <point x="81.0" y="71.0" />
+            </edge>
+            <edge source="5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.book_details_authors" target="5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.author">
+              <point x="42.5" y="-36.0" />
+              <point x="841.2053571428571" y="205.0" />
+              <point x="861.4642857142858" y="205.0" />
+              <point x="0.0" y="36.5" />
+            </edge>
+            <edge source="5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.voting" target="5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.book">
+              <point x="55.5" y="-71.0" />
+              <point x="180.375" y="205.0" />
+              <point x="298.4642857142858" y="205.0" />
+              <point x="-86.0" y="82.5" />
+            </edge>
+            <edge source="5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.book_details_categories" target="5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.book">
+              <point x="-47.75" y="-36.0" />
+              <point x="445.18750000000006" y="205.0" />
+              <point x="384.4642857142858" y="205.0" />
+              <point x="0.0" y="82.5" />
+            </edge>
+            <edge source="5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.voting" target="5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.round">
+              <point x="18.5" y="-71.0" />
+              <point x="143.375" y="205.0" />
+              <point x="148.5" y="205.0" />
+              <point x="23.625" y="59.5" />
+            </edge>
+            <edge source="5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.users_voting" target="5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.user">
+              <point x="28.5" y="-36.0" />
+              <point x="991.4553571428571" y="205.0" />
+              <point x="1117.1875" y="205.0" />
+              <point x="-81.0" y="71.0" />
+            </edge>
+            <edge source="5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.group_admins" target="5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.group">
+              <point x="29.5" y="-36.0" />
+              <point x="1337.7142857142858" y="205.0" />
+              <point x="1362.6875" y="205.0" />
+              <point x="-35.0" y="36.5" />
+            </edge>
+            <edge source="5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.users_voting" target="5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.book">
+              <point x="-28.5" y="-36.0" />
+              <point x="934.4553571428571" y="185.0" />
+              <point x="470.4642857142858" y="185.0" />
+              <point x="86.0" y="82.5" />
+            </edge>
+            <edge source="5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.book_details_authors" target="5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.book">
+              <point x="-42.5" y="-36.0" />
+              <point x="756.2053571428571" y="195.0" />
+              <point x="427.4642857142858" y="195.0" />
+              <point x="43.0" y="82.5" />
+            </edge>
+            <edge source="5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.rounds_books" target="5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.book">
+              <point x="29.5" y="-36.0" />
+              <point x="314.3392857142858" y="205.0" />
+              <point x="341.4642857142858" y="205.0" />
+              <point x="-43.0" y="82.5" />
+            </edge>
+            <edge source="5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.message" target="5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.user">
+              <point x="0.0" y="-82.5" />
+              <point x="1144.7142857142858" y="205.0" />
+              <point x="1171.1875" y="205.0" />
+              <point x="-27.0" y="71.0" />
+            </edge>
+            <edge source="5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.group_members" target="5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.group">
+              <point x="30.25" y="-36.0" />
+              <point x="1477.9642857142858" y="205.0" />
+              <point x="1432.6875" y="205.0" />
+              <point x="35.0" y="36.5" />
+            </edge>
+            <edge source="5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.group_admins" target="5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.user">
+              <point x="-29.5" y="-36.0" />
+              <point x="1278.7142857142858" y="205.0" />
+              <point x="1225.1875" y="205.0" />
+              <point x="27.0" y="71.0" />
+            </edge>
+            <edge source="5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.rounds_books" target="5dfa2f33-5507-4b1e-94ea-1c10fa79f63c.TABLE:dd8681ba7bphab.public.round">
+              <point x="-29.5" y="-36.0" />
+              <point x="255.33928571428578" y="195.0" />
+              <point x="195.75" y="195.0" />
+              <point x="70.875" y="59.5" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="1.0" x="240.0" y="240.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Key columns</Category>
+            <Category>Columns</Category>
+          </Categories>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/slackoFrontend/slack/src/app/components/book-component/new-voting/new-voting.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="55" selection-start-line="23" selection-start-column="55" selection-end-line="23" selection-end-column="55" />
+          <folding>
+            <element signature="n#style#0;n#button#0;n#div#1;n#div#0;n#form#0;n#div#1;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -3341,10 +3341,10 @@
       <IntrospectionStateNumber>13014711</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
-      <Relations>sequence|table|20582247|20582249|1
-sequence|table|20582255|20582257|1
-sequence|table|20582266|20582268|1
+      <Relations>sequence|table|20582266|20582268|1
 sequence|table|20582274|20582276|1
+sequence|table|20582255|20582257|1
+sequence|table|20582247|20582249|1
 sequence|table|20582291|20582293|1
 sequence|table|20582305|20582307|1
 sequence|table|20582313|20582315|1
