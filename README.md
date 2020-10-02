@@ -1,3 +1,3 @@
 # SpokoSlack
-The app to vote for the best book to read at work.
+App that allows to vote for the book to reed in group.
 
